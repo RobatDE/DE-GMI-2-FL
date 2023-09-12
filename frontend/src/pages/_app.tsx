@@ -7,7 +7,8 @@ import { store } from '../stores/store';
 import { Provider } from 'react-redux';
 import '../css/main.css';
 import axios from 'axios';
-import { baseURLApi } from '../config';
+import { baseURLApi, hostApi, portApi } from '../config';
+import * as config from '../config';
 
 export type NextPageWithLayout<P = Record<string, unknown>, IP = P> = NextPage<
   P,
@@ -23,7 +24,6 @@ type AppPropsWithLayout = AppProps & {
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page);
-
   if (typeof window !== 'undefined') {
     // Perform localStorage action
     axios.defaults.baseURL = baseURLApi;

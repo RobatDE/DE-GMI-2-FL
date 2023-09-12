@@ -42,6 +42,8 @@ export default function Login() {
 
   const handleSubmit = async (value) => {
     const { remember, ...rest } = value;
+    console.log("Login: Handle submit: ");
+    console.dir(value);
     await dispatch(loginUser(rest));
   };
 

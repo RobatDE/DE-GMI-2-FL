@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f ../docker/docker-compose.yml
+    kompose.version: 1.30.0 (9d8dcb518)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: web
+  name: web
+  namespace: gmi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: web
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f ../docker/docker-compose.yml
+        kompose.version: 1.30.0 (9d8dcb518)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/docker-default: "true"
+        io.kompose.service: web
+    spec:
+      containers:
+        - image: 039978326156.dkr.ecr.us-east-2.amazonaws.com/degmi/frontend:latest
+          imagePullPolicy: Always
+          name: web
+          env:
+             - name: BACKEND_API_HOST
+               value: "http://api.digitalexhaust.net"
+             - name: BACKEND_API_PORT
+               value: "8080"
+          ports:
+            - containerPort: 3000
+              hostPort: 3000
+              protocol: TCP
+          resources: {}
+          stdin: true
+          tty: true
+      restartPolicy: Always
+status: {}
