@@ -14,6 +14,10 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const authRoutes = require('./routes/auth');
 const fileRoutes = require('./routes/file');
 
+const enhancedRoutes = require('./routes/enhanced');
+
+const wrenchRoutes = require('./routes/wrench');
+
 const usersRoutes = require('./routes/users');
 
 const assetsRoutes = require('./routes/assets');
@@ -47,6 +51,7 @@ const promptsRoutes = require('./routes/prompts');
 const team_membersRoutes = require('./routes/team_members');
 
 const promptresponsesRoutes = require('./routes/promptresponses');
+
 
 const options = {
   definition: {
@@ -133,6 +138,18 @@ app.use(
   '/api/companies',
   passport.authenticate('jwt', { session: false }),
   companiesRoutes,
+);
+
+app.use(
+  '/api/enhanced',
+  passport.authenticate('jwt', { session: false }),
+  enhancedRoutes,
+);
+
+app.use(
+  '/api/wrench',
+  passport.authenticate('jwt', { session: false }),
+ wrenchRoutes,
 );
 
 app.use(

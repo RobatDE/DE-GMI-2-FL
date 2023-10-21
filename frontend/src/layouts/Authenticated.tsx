@@ -122,7 +122,7 @@ export default function LayoutAuthenticated({ children }: Props) {
           onAsideLgClose={() => setIsAsideLgActive(false)}
         />
         {children}
-        <FooterBar>Hand-crafted & Made with ❤️</FooterBar>
+        <FooterBar>Your growth platform</FooterBar>
       </div>
     </div>
   );

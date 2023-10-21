@@ -1,6 +1,6 @@
 import React from 'react';
 import BaseIcon from '../BaseIcon';
-import { mdiEye, mdiTrashCan, mdiPencilOutline } from '@mdi/js';
+import { mdiEye, mdiTrashCan, mdiPencilOutline, mdiProgressCheck, mdiChatProcessing } from '@mdi/js';
 import axios from 'axios';
 import {
   GridActionsCellItem,
@@ -18,6 +18,7 @@ export const loadColumns = async (
   onDelete: Params,
   onView: Params,
   onEdit: Params,
+  onPrompt: Params,
 ) => {
   async function callOptionsApi(entityName: string) {
     const data = await axios(`/${entityName}/autocomplete?limit=100`);
@@ -86,6 +87,12 @@ export const loadColumns = async (
           icon={<BaseIcon path={mdiTrashCan} size={24} />}
           onClick={() => onDelete(params?.row?.id)}
           label='Delete'
+        />,
+        <GridActionsCellItem
+          key={2}
+          icon={<BaseIcon path={mdiChatProcessing} size={24} />}
+          onClick={() => onPrompt(params?.row?.id)}
+          label='Response'
         />,
       ],
     },

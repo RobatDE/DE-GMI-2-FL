@@ -84,6 +84,9 @@ const TableSamplePrompts = ({ filterItems, setFilterItems, filters }) => {
     setIsModalTrashActive(false);
   };
 
+  const handlePromptAction = (id: string) => {
+    router.push(`/promptresponses/promptresponses-view/${id}`);
+  };
   const handleEditAction = (id: string) => {
     router.push(`/prompts/${id}`);
   };
@@ -162,6 +165,7 @@ const TableSamplePrompts = ({ filterItems, setFilterItems, filters }) => {
       handleDeleteModalAction,
       handleViewAction,
       handleEditAction,
+      handlePromptAction,
     ).then((newCols) => setColumns(newCols));
   }, []);
 

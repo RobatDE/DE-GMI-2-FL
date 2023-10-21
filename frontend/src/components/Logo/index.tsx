@@ -2,14 +2,24 @@ import React from 'react';
 
 type Props = {
   className?: string;
+  logofilename?: string;
 };
 
-export default function Logo({ className = '' }: Props) {
+let srcLogo = 'https://digitalexhaust.co/wp-content/uploads/2023/04/DE-Logo-250-px-x-45-px.png';
+
+export default function Logo({ className = '', logofilename = ''}: Props) {
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  }
+
+  if(logofilename != null )
+     srcLogo = logofilename;
   return (
     <img
-      src={'https://flatlogic.com/logo.svg'}
+      src={srcLogo}
       className={className}
-      alt={'Flatlogic logo'}
+      alt={'Digital Exhaust logo'}
     ></img>
   );
 }

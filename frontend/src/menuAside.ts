@@ -110,7 +110,7 @@ const menuAside: MenuAsideItem[] = [
     icon: mdiAccountCircle,
   },
   {
-    href: '/api-docs',
+    href: 'http://localhost:8080/api-docs',
     label: 'Swagger API',
     icon: mdiAccountCircle,
   },
