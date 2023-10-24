@@ -70,8 +70,9 @@ const { parse } = require('json2csv');
  */
 
 router.post(
-  '/ ',
+  '/',
   wrapAsync(async (req, res) => {
+    console.log("inside route ");
     await EnhancedService.post_prompt(
       req.body.data,
       req.currentUser,

@@ -9,10 +9,11 @@ const stream = require('stream');
 
 module.exports = class EnhancedService {
 
-//   curl -X 'POST' \
-//   'https://api-dev.fluxprompt.ai/flux/api-v2?flowId=12213123' \
-//   -H 'accept: application/json' \
-//   -H 'Content-Type: application/json' \
+//  curl -X 'POST' \
+//  'https://api-dev.fluxprompt.ai/flux/api-v2?flowId=9066' \
+//-H 'accept: application/json' \
+//-H 'api-key: FLUX_API.01b37cd9-38c0-4c95-9e07-0d27b5995580' \
+//-H 'Content-Type: application/json' \
 //   -d '{
 //   "inputText": "string",
 //   "variableInputs": [
@@ -26,8 +27,10 @@ module.exports = class EnhancedService {
 // API key for enhanced AI
 // FLUX_API.01b37cd9-38c0-4c95-9e07-0d27b5995580
 
-enhancedAIAPI =  "https://api-dev.fluxprompt.ai/flux/api-v2?flowId=9066";
-enhancedAIBody =  {
+ static enhancedAIAPI =  "https://api-dev.fluxprompt.ai/flux/api-v2?flowId=9066";
+ static enhancedAIKey = 'FLUX_API.01b37cd9-38c0-4c95-9e07-0d27b5995580';
+ static enhancedAIBody =  {
+   "inputText": "Summarize the marketing for business google.com",
   "variableInputs": 
           [{
           "inputId":"varInputNode_1692644955479_0.9066",
@@ -39,28 +42,18 @@ enhancedAIBody =  {
           }]
 }
 
-  options = {
-    headers: {'X-Custom-Header': 'value'}
+  static options = {
+    headers: [
+              {'accept': 'application/json'},
+              {'Content-Type': 'application/json'},
+              {'api-key': 'FLUX_API.01b37cd9-38c0-4c95-9e07-0d27b5995580'}
+             ]
   };
 
-  reqbody = {"variableInputs": 
-    [
-      {
-        "inputId":"varInputNode_1692644955479_0.9066",
-        "inputText":"Example  1 Text For Input "
-      }
-    ]
-  }
-
-
   static async post_prompt(data, currentUser) {
-    console.log("Inside post promtp");
+    console.log("Inside post prompt");
     try {
-      axios({
-        method: 'post',
-        url: enhancedAIAPI,
-        data: reqbody
-        })
+      axios.post( enhancedAIAPI, enhancedAIBody, options )
         .then(res => {
           console.log(res.data);
           res.data; 
