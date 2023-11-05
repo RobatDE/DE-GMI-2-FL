@@ -49,7 +49,7 @@ spec:
                value: "dedb"
              - name: APP_DB_USER
                value: "admin"
-          image: 039978326156.dkr.ecr.us-east-2.amazonaws.com/degmi/backend:latest
+          image: registry.gitlab.com/de4512928/saas/backend:latest
           imagePullPolicy: Always
           name: backend
           ports:
@@ -57,5 +57,7 @@ spec:
               hostPort: 8080
               protocol: TCP
           resources: {}
+      imagePullSecrets: 
+        - name: registry-credentials
       restartPolicy: Always
 status: {}

@@ -26,7 +26,7 @@ spec:
         io.kompose.service: web
     spec:
       containers:
-        - image: 039978326156.dkr.ecr.us-east-2.amazonaws.com/degmi/frontend:latest
+        - image: registry.gitlab.com/de4512928/saas/frontend:latest
           imagePullPolicy: Always
           name: web
           env:

@@ -1,3 +1,11 @@
+export REGISTRY_USERNAME='rob6112628'
+export REGISTRY_PASSWORD='Chui2023@@'
+export REGISTRY_EMAIL='rob@digitalexhaust.co'
+export BASE_64_BASIC_AUTH_CREDENTIALS='echo -n "$REGISTRY_USERNAME:$REGISTRY_PASSWORD" | base64'
+
+kubectl create secret docker-registry registry-credentials --docker-server=https://registry.gitlab.com --docker-username=REGISTRY_USERNAME --docker-password=REGISTRY_PASSWORD --docker-email=REGISTRY_EMAIL
+kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registry-credentials"}]}'
+
 kubectl create namespace gmi
 kubectl apply -n gmi -f db-init-config-map.yaml
 kubectl apply -n gmi -f db-claim0-persistentvolumeclaim.yaml,db-deployment.yaml,db-service.yaml

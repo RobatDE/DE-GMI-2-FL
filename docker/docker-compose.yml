@@ -3,7 +3,7 @@
 version: "3.9"
 services:
   web:
-    image: 039978326156.dkr.ecr.us-east-2.amazonaws.com/degmi/frontend:latest
+    image: registry.gitlab.com/de4512928/saas/frontend:latest
     container_name: web
     build: ../frontend
     stdin_open: true # docker run -i
@@ -31,7 +31,7 @@ services:
       - "5432:5432"
 
   backend:
-    image: 039978326156.dkr.ecr.us-east-2.amazonaws.com/degmi/backend:latest
+    image: registry.gitlab.com/de4512928/saas/backend:latest
     container_name: backend
     volumes:
     - ./wait-for-it.sh:/usr/src/app/wait-for-it.sh
@@ -45,5 +45,6 @@ services:
      - "db"
 
     command: ["bash", "./wait-for-it.sh", "db:5432", "--timeout=0", "--strict", "--", "bash", "./start-backend.sh"]
+
 
   

@@ -1,0 +1,124 @@
+ 1270  kubectl -n gmi get pods
+ 1271  kubectl describe pod backend-5b448cbcd7-h2zw6 
+ 1272  kubectl -n gmi get pods
+ 1273  kubectl -n gmi get pods -n gmi
+ 1274  kubectl describe pod backend-5b448cbcd7-h2zw6  -n gmi
+ 1279  kubectl -n gmi get pods -n gmi
+ 1280  kubectl -n gmi get pods 
+ 1284  kubectl -n gmi get pods
+ 1286  kubectl -n gmi get pods
+ 1287  kubectl -n gmi get services
+ 1288  kubectl  get services
+ 1290  kubectl -n gmi get pods
+ 1291  kubectl -n gmi get svc
+ 1294  kubectl -n gmi get svc
+ 1295  kubectl -n gmi get pods
+ 1296  kubectl -n gmi logs web-647d95bfdb-csmk5 
+ 1297  kubectl -n gmi get pods
+ 1298  kubectl -n gmi describe pod backend-5b448cbcd7-bg54r 
+ 1299  kubectl -n gmi logs  backend-5b448cbcd7-bg54r 
+ 1300  kubectl -n gmi get pods
+ 1314  kubectl -n gmi get pods
+ 1315  kubectl -n gmi describe pod backend-5b448cbcd7-4jw5k  
+ 1316  kubectl -n gmi logs  backend-5b448cbcd7-4jw5k  
+ 1338  kubectl -n gmi get pods
+ 1340  kubectl -n gmi get pods
+ 1341  kubectl -n gmi describe pod NAME                       READY   STATUS    RESTARTS      AGE
+ 1343  kubectl -n gmi describe pod backend-5b448cbcd7-qxkx7
+ 1344  kubectl -n gmi logs  backend-5b448cbcd7-qxkx7
+ 1348  kubectl -n gmi get pods
+ 1352  kubectl -n gmi get pods
+ 1353  kubectl -n gmi apply web-service.yaml 
+ 1354  kubectl -n gmi apply -f web-service.yaml 
+ 1355  kubectl get svc
+ 1356  kubectl get svc -n gmi
+ 1358  kubectl port-forward --namespace default svc/jolly-raccoon-postgresql 5432:5432 &
+ 1359  kubectl port-forward --namespace default svc/ 5432:15432 &
+ 1360  kubectl -n gmi get svc
+ 1361  kubectl port-forward --namespace gmi svc/db 5432:5432 &
+ 1365  kubectl port-forward --namespace gmi svc/db 5432:15432 &
+ 1366  kubectl port-forward --namespace gmi svc/db 15432:5432 &
+ 1370  kubectl -n gmi get pods
+ 1372  kubectl port-forward --namespace gmi svc/db 15432:5432 &
+ 1377  kubectl port-forward --namespace gmi svc/db 15432:5432 &
+ 1390  kubectl port-forward --namespace gmi svc/db 5432:5432 &
+ 1395  kubectl port-forward --namespace gmi svc/db 5432:5432 &
+ 1463  kubectl -n gmi delete namespace gmi
+ 1468  kubectl -n gmi get svc
+ 1469  kubectl -n gmi get pods
+ 1473  kubectl -n gmi get svc
+ 1474  kubectl -n gmi apply web-service.yaml 
+ 1475  kubectl -n gmi apply -f web-service.yaml 
+ 1476  kubectl -n gmi delete -f web-service.yaml 
+ 1477  kubectl -n gmi apply -f web-service.yaml 
+ 1478  kubectl -n gmi get svc
+ 1479  kubectl -n gmi get pods
+ 1482  kubectl -n gmi get pods
+ 1485  kubectl -n gmi get pods
+ 1488  kubectl -n gmi get pods
+ 1489  kubectl -n gmi get svc
+ 2015  kubectl get pods 
+ 2016  kubectl get pods -n degmi
+ 2017  kubectl get pods -n gmi
+ 2019  kubectl get pods
+ 2020  kubectl get pods -n gmi
+ 2025  kubectl  get pods
+ 2026  kubectl  get svc
+ 2027  kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/latest/download/cert-manager.crds.yaml
+ 2028  kubectl create namespace cert-manager
+ 2033  kubectl get namespaces
+ 2034  kubectl delete  namespaces degmi
+ 2035  kubectl get namespaces
+ 2036  kubectl get pods -n gmi
+ 2037  kubectl get all -n cert-manager
+ 2038  kubectl get all -n gmi
+ 2077  kubectl get pods --all-namespaces
+ 2078  kubectl delete pod backend-79b4f5df5c-9x5hg -n gmi 
+ 2079  kubectl get pods --all-namespaces
+ 2080  kubectl -n gmi delete pod cert-manager-webhook-f8f64cb85-pwqb5     
+ 2081  kubectl -n cert-manager delete pod cert-manager-webhook-f8f64cb85-pwqb5     
+ 2082  kubectl get pods --all-namespaces
+ 2083  kubectl -n cert-manager delete pod gnix-ingress-nginx-ingress-controller-7598dbf4cd-6lvhq    
+ 2084  kubectl  delete pod gnix-ingress-nginx-ingress-controller-7598dbf4cd-6lvhq    
+ 2085  kubectl get pods --all-namespaces
+ 2092  kubectl  get pods --all-namespaces
+ 2093  kubectl get pods --all-namespaces
+ 2125  kubectl -n gmi get pods
+ 2126  kubectl -n gmi describe pod backend-79b4f5df5c-dl6lt
+ 2129  kubectl -n gmi get pods
+ 2130  kubectl -n gmi describe pod backend-6d58fb5c9d-2pdpp 
+ 2137  kubectl create secret docker-registry registry-credentials --docker-server=https://registry.gitlab.com --docker-username=REGISTRY_USERNAME --docker-password=REGISTRY_PASSWORD --docker-email=REGISTRY_EMAIL
+ 2138  kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registry-credentials"}]}'
+ 2139  kubectl create secret docker-registry registry-credentials --docker-server=https://registry.gitlab.com --docker-username=REGISTRY_USERNAME --docker-password=REGISTRY_PASSWORD --docker-email=REGISTRY_EMAIL -n gmi
+ 2140  kubectl patch serviceaccount default -n gmi -p '{"imagePullSecrets": [{"name": "registry-credentials"}]}'
+ 2143  kubectl  get pods -n gmi
+ 2193  kubectl get secret docker-registry registry-credentials
+ 2194  kubectl get secret  registry-credentials
+ 2196  kubectl get pods -n gmi
+ 2198  kubectl apply backend-deployment.yaml -n gmi
+ 2199  kubectl apply -f backend-deployment.yaml -n gmi
+ 2202  kubectl apply registry-credentials.yaml 
+ 2203  kubectl apply -f registry-credentials.yaml 
+ 2204  kubectl get secret registry-credentials --output=yaml
+ 2205  kubectl get secret registry-credentials --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode
+ 2206  kubectl apply -f backend-deployment.yaml 
+ 2207  kubectl get pods -n gmi
+ 2208  kubectl -n gmi describe pod backend-5b67cb97d-7xv6j 
+ 2209  kubectl apply -f registry-credentials.yaml 
+ 2210  kubectl delete  -f backend-deployment.yaml 
+ 2211  kubectl apply -f registry-credentials.yaml 
+ 2212  kubectl apply -f backend-deployment.yaml 
+ 2213  kubectl get pods -n gmi
+ 2214  kubectl -n gmi describe pod backend-5b67cb97d-8bvf8 
+ 2223  kubectl apply -f registry-credentials.yaml 
+ 2226  kubectl -n gmi apply -f registry-credentials.yaml 
+ 2228  kubectl -n gmi apply -f registry-credentials.yaml 
+ 2229  kubectl -n DEFAULT apply -f registry-credentials.yaml 
+ 2230  kubectl -n default apply -f registry-credentials.yaml
+ 2231  kubectl apply -f registry-credentials.yaml
+ 2232  kubectl get pods -n gmi
+ 2236  kubectl get pods -n gmi
+ 2237  kubectl get svc
+ 2238  kubectl get svc -n gmi
+ 2240  history |grep kubectl
+ 2241  history |grep kubectl >> kubectl.history.txt
