@@ -18,4 +18,4 @@ spec:
           image: public.ecr.aws/nginx/nginx
           ports:
             - name: app-port
-              containerPort: 80
+              containerPort: 3000

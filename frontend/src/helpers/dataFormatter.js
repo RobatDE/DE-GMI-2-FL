@@ -304,4 +304,4 @@ export default {
     if (!val) return '';
     return { label: val.id, id: val.id };
   },
-};
+}

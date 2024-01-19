@@ -111,6 +111,46 @@ export interface User {
   avatar: any[];
   notes: any[];
 }
+export interface Persona {
+  id: string;
+  Name: string;
+  Occupation?: any;
+  Description?: any;
+  IncomeRange?: any;
+  Age?: any;
+  Gender?: any;
+  GenderIdentity?: any;
+  EmploymentType?: any;
+  EducationLevel: string;
+  MaritalStatus?: any;
+  HouseholdComposition?: any;
+  Income?: any;
+  Religion?: any;
+  Nationality?: any;
+  Geography?: any;
+  Ethnicity?: any;
+  Race?: any;
+  Language?: any;
+  PoliticalAffiliation?: any;
+  HomeOwnership?: any;
+  PersonalityDetails?: JSON;
+  PositionDetails?: JSON;
+  CommunicationsDetails?: JSON;
+  FrustrationDetails?: JSON;
+  MotivationsDetails?: JSON;
+  AgeRange: string;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt?: any;
+  avatar_id: any;
+  belongsTo: string;
+  belongsToId: string;
+  belongsToColumn: string;
+  avatar_name: string;
+  sizeInBytes: string;
+  privateUrl: string;
+  publicUrl: string;
+}
 
 export type StyleKey = 'white' | 'basic';
 

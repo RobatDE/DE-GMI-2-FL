@@ -1,0 +1,121 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Jane Doe",
+        "followers": [2, 3, 4, 6, 8],
+        "following": [2, 3],
+        "comments": [
+          {"timestamp": "2023-01-01T12:00:00", "text": "Hello, Twitter! Feeling excited today!", "emotion": "happy", "retweets": 5},
+          {"timestamp": "2023-01-02T10:30:00", "text": "What's up, everyone? Just finished a good book. #Bookworm", "emotion": "content", "retweets": 3},
+          {"timestamp": "2023-01-03T14:45:00", "text": "Enjoying a quiet evening with some music. #Relaxation", "emotion": "relaxed", "retweets": 2},
+          {"timestamp": "2023-01-04T09:00:00", "text": "Ready for the day! #Motivated", "emotion": "motivated", "retweets": 8},
+          {"timestamp": "2023-01-05T11:30:00", "text": "Reflecting on the past year. Grateful for the experiences. #Gratitude", "emotion": "grateful", "retweets": 6}
+        ]
+      },
+      {
+        "id": 2,
+        "name": "John Doe",
+        "followers": [1, 3, 5, 7, 9],
+        "following": [1, 3],
+        "comments": [
+          {"timestamp": "2023-01-01T12:30:00", "text": "Hey @JaneDoe, nice to meet you! Feeling friendly today.", "emotion": "friendly", "retweets": 2},
+          {"timestamp": "2023-01-02T11:00:00", "text": "Just had a great lunch. #Foodie", "emotion": "satisfied", "retweets": 7},
+          {"timestamp": "2023-01-03T09:45:00", "text": "Excited for the weekend! #FridayFeeling", "emotion": "excited", "retweets": 4},
+          {"timestamp": "2023-01-04T15:20:00", "text": "Challenging myself with a new project. #ChallengeAccepted", "emotion": "determined", "retweets": 3},
+          {"timestamp": "2023-01-05T13:45:00", "text": "Spent the day outdoors. Nature is refreshing. #NatureLover", "emotion": "refreshed", "retweets": 5}
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Alice Smith",
+        "followers": [1, 2, 4, 6, 9],
+        "following": [1, 5],
+        "comments": [
+          {"timestamp": "2023-01-01T13:00:00", "text": "@JaneDoe and @JohnDoe, hello from me too! Feeling positive.", "emotion": "positive", "retweets": 6},
+          {"timestamp": "2023-01-03T08:15:00", "text": "Working on a new project. #Productivity", "emotion": "focused", "retweets": 1},
+          {"timestamp": "2023-01-04T12:10:00", "text": "Cooked a delicious meal today. #HomeChef", "emotion": "satisfied", "retweets": 4},
+          {"timestamp": "2023-01-05T16:00:00", "text": "Taking a break and enjoying some tea. #TeaTime", "emotion": "relaxed", "retweets": 3},
+          {"timestamp": "2023-01-06T09:30:00", "text": "Setting goals for the week. #GoalSetting", "emotion": "focused", "retweets": 2}
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Emily Johnson",
+        "followers": [1, 3, 5, 7, 8],
+        "following": [2, 3],
+        "comments": [
+          {"timestamp": "2023-01-01T14:30:00", "text": "New to Twitter! Excited to connect with everyone.", "emotion": "curious", "retweets": 3},
+          {"timestamp": "2023-01-02T12:45:00", "text": "Exploring new hobbies. Any recommendations? #Newbie", "emotion": "curious", "retweets": 4},
+          {"timestamp": "2023-01-03T10:20:00", "text": "Sunday brunch is the highlight of my week. #SundayFunday", "emotion": "happy", "retweets": 6},
+          {"timestamp": "2023-01-04T18:00:00", "text": "Feeling a bit overwhelmed with work. Need a break. #Stressed", "emotion": "stressed", "retweets": 3},
+          {"timestamp": "2023-01-05T14:30:00", "text": "Missing the weekend already. #MondayBlues", "emotion": "sad", "retweets": 5}
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Daniel Brown",
+        "followers": [2, 4, 6, 8, 9],
+        "following": [2, 3],
+        "comments": [
+          {"timestamp": "2023-01-01T15:15:00", "text": "Greetings, Twitterverse! Ready for some interesting conversations.", "emotion": "enthusiastic", "retweets": 5},
+          {"timestamp": "2023-01-02T13:30:00", "text": "Just started a new book. Can't put it down! #BookLover", "emotion": "engaged", "retweets": 7},
+          {"timestamp": "2023-01-03T11:10:00", "text": "Hiking adventures this weekend. #NatureExplorer", "emotion": "excited", "retweets": 3},
+          {"timestamp": "2023-01-04T16:45:00", "text": "Dealing with some challenges at work. #WorkLife", "emotion": "frustrated", "retweets": 4},
+          {"timestamp": "2023-01-05T15:15:00", "text": "Feeling a bit drained today. #Tired", "emotion": "tired", "retweets": 2}
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Olivia Taylor",
+        "followers": [1, 3, 4, 7, 9],
+        "following": [1, 5],
+        "comments": [
+          {"timestamp": "2023-01-01T16:00:00", "text": "Hello, world! What's happening today? #CuriousMind", "emotion": "curious", "retweets": 4},
+          {"timestamp": "2023-01-02T14:15:00", "text": "Movie night recommendations, anyone? #MovieBuff", "emotion": "curious", "retweets": 2},
+          {"timestamp": "2023-01-03T12:00:00", "text": "Feeling grateful for the simple joys in life. #Gratitude", "emotion": "grateful", "retweets": 5},
+          {"timestamp": "2023-01-04T17:30:00", "text": "Had a disagreement with a friend. #Conflict", "emotion": "angry", "retweets": 3},
+          {"timestamp": "2023-01-05T16:00:00", "text": "Navigating through a tough situation. #Challenges", "emotion": "stressed", "retweets": 6}
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Michael Wilson",
+        "followers": [1, 2, 4, 5, 8],
+        "following": [2, 3],
+        "comments": [
+          {"timestamp": "2023-01-01T17:00:00", "text": "Excited to share my travel experiences! #Wanderlust", "emotion": "excited", "retweets": 6},
+          {"timestamp": "2023-01-02T15:30:00", "text": "Trying out a new recipe tonight. Fingers crossed! #CookingAdventures", "emotion": "nervous", "retweets": 3},
+          {"timestamp": "2023-01-03T13:45:00", "text": "Sunday relaxation with a good book. #LazySunday", "emotion": "relaxed", "retweets": 4},
+          {"timestamp": "2023-01-04T19:15:00", "text": "Feeling a bit overwhelmed with work. #Stressed", "emotion": "stressed", "retweets": 5},
+          {"timestamp": "2023-01-05T17:30:00", "text": "Dealing with unexpected challenges. #LifeStruggles", "emotion": "frustrated", "retweets": 2}
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Sophia Martinez",
+        "followers": [2, 4, 5, 7, 9],
+        "following": [2, 3],
+        "comments": [
+          {"timestamp": "2023-01-01T18:15:00", "text": "Hello Twitter family! Let's connect and share stories.", "emotion": "friendly", "retweets": 5},
+          {"timestamp": "2023-01-02T16:45:00", "text": "Weekend getaway planning in progress. Any suggestions? #TravelPlans", "emotion": "excited", "retweets": 7},
+          {"timestamp": "2023-01-03T14:20:00", "text": "Grateful for supportive friends and family. #Gratitude", "emotion": "grateful", "retweets": 2},
+          {"timestamp": "2023-01-04T20:00:00", "text": "Feeling a bit under the weather today. #SickDay", "emotion": "sick", "retweets": 3},
+          {"timestamp": "2023-01-05T18:15:00", "text": "Coping with a difficult situation. #Challenges", "emotion": "stressed", "retweets": 4}
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Ethan Clark",
+        "followers": [1, 3, 5, 7, 8],
+        "following": [1, 5],
+        "comments": [
+          {"timestamp": "2023-01-01T19:30:00", "text": "Cheers to a new year full of possibilities! #NewBeginnings", "emotion": "optimistic", "retweets": 3},
+          {"timestamp": "2023-01-02T17:15:00", "text": "Coding away into the night. #DeveloperLife", "emotion": "focused", "retweets": 5},
+          {"timestamp": "2023-01-03T15:10:00", "text": "Sunday gaming session with friends. #GamerLife", "emotion": "excited", "retweets": 4},
+          {"timestamp": "2023-01-04T21:00:00", "text": "Feeling a bit stressed with work deadlines. #WorkPressure", "emotion": "stressed", "retweets": 2},
+          {"timestamp": "2023-01-05T19:30:00", "text": "Long day at work. #Tired", "emotion": "tired", "retweets": 6}
+        ]
+      }
+    ]
+}

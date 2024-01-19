@@ -14,7 +14,6 @@ spec:
     - name: "5432"
       port: 5432
       targetPort: 5432
+  externalName: db.digitalexhaust.ai
   selector:
     io.kompose.service: db
-status:
-  loadBalancer: {}

@@ -1,3 +1,6 @@
+      //CREATE EXTENSION IF NOT EXISTS pgcrypto;
+      //  defaultValue: literal('gen_random_uuid()'),            
+
 module.exports = {
   /**
    * @param {QueryInterface} queryInterface
@@ -10,6 +13,8 @@ module.exports = {
      */
     const transaction = await queryInterface.sequelize.transaction();
     try {
+      await queryInterface.sequelize.query('CREATE EXTENSION IF NOT EXISTS pgcrypto;'
+      );
       await queryInterface.createTable(
         'users',
         {
@@ -587,6 +592,505 @@ module.exports = {
         },
         { transaction },
       );
+      await queryInterface.createTable(
+        'applicants',
+        {
+          id: {
+            type: Sequelize.DataTypes.UUID,
+            defaultValue: Sequelize.DataTypes.UUIDV4,
+            //defaultValue: literal('gen_random_uuid()'),            
+            primaryKey: true,
+          },          
+          createdAt: { type: Sequelize.DataTypes.DATE },
+          updatedAt: { type: Sequelize.DataTypes.DATE },
+          deletedAt: { type: Sequelize.DataTypes.DATE },
+          importHash: {
+            type: Sequelize.DataTypes.STRING(255),
+            allowNull: true,
+            unique: true,
+          },
+        },
+        { transaction },
+      );  
+      await queryInterface.addColumn(
+        'applicants',
+        'FirstName',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'MiddleName',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+
+      await queryInterface.addColumn(
+        'applicants',
+        'LastName',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+
+      await queryInterface.addColumn(
+        'applicants',
+        'Description',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'Gender',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'GenderIdentity',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'Occupation',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'Industry',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'EducationLevel',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'IncomeRange',
+        {
+          type: Sequelize.DataTypes.ENUM,
+
+          values: ['1','2','3','4','5','6'],
+        }, 
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'Age',
+        { type: Sequelize.DataTypes.INTEGER,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'MaritalStatus',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'EmploymentType',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'applicants',
+        'HouseholdComposition',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'applicants',
+        'Income',
+        { type: Sequelize.DataTypes.INTEGER,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'applicants',
+        'Religion',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'Nationality',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'applicants',
+        'Geography',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'applicants',
+        'Ethnicity',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'Languages',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'AssociationssDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'PersonalityDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'PositionDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'CommunicationsDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'applicants',
+        'CertificationsDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+
+      await queryInterface.createTable(
+        'personas',
+        {
+          id: {
+            type: Sequelize.DataTypes.UUID,
+            defaultValue: Sequelize.DataTypes.UUIDV4,
+            //defaultValue: literal('gen_random_uuid()'),            
+            primaryKey: true,
+          },          
+          createdAt: { type: Sequelize.DataTypes.DATE },
+          updatedAt: { type: Sequelize.DataTypes.DATE },
+          deletedAt: { type: Sequelize.DataTypes.DATE },
+          importHash: {
+            type: Sequelize.DataTypes.STRING(255),
+            allowNull: true,
+            unique: true,
+          },
+        },
+        { transaction },
+      );  
+
+      await queryInterface.addColumn(
+        'personas',
+        'Name',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+
+      await queryInterface.addColumn(
+        'personas',
+        'Description',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'IncomeRange',
+        {
+          type: Sequelize.DataTypes.ENUM,
+
+          values: ['1','2','3','4','5','6'],
+        }, 
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'Age',
+        { type: Sequelize.DataTypes.INTEGER,
+        },
+        { transaction },
+      );
+
+      await queryInterface.addColumn(
+        'personas',
+        'Gender',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'GenderIdentity',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'Occupation',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'EducationLevel',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'MaritalStatus',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'EmploymentType',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'personas',
+        'HouseholdComposition',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'personas',
+        'Income',
+        { type: Sequelize.DataTypes.INTEGER,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'personas',
+        'Religion',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'Nationality',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'personas',
+        'Geography',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'personas',
+        'Ethnicity',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'Race',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      
+      await queryInterface.addColumn(
+        'personas',
+        'Language',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+
+      await queryInterface.addColumn(
+        'personas',
+        'PoliticalAffiliation',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'HomeOwnership',
+        { type: Sequelize.DataTypes.STRING,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'PersonalityDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'PositionDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'CommunicationsDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'FrustrationDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+      await queryInterface.addColumn(
+        'personas',
+        'MotivationsDetails',
+        { type: Sequelize.DataTypes.JSON,
+        },
+        { transaction },
+      );
+
+      await queryInterface.createTable(
+        'needs',
+        {
+          id: {
+            type: Sequelize.DataTypes.UUID,
+            defaultValue: Sequelize.DataTypes.UUIDV4,
+            primaryKey: true,
+          },
+          createdAt: { type: Sequelize.DataTypes.DATE },
+          updatedAt: { type: Sequelize.DataTypes.DATE },
+          deletedAt: { type: Sequelize.DataTypes.DATE },
+          importHash: {
+            type: Sequelize.DataTypes.STRING(255),
+            allowNull: true,
+            unique: true,
+          },
+        },
+        { transaction },
+      );  
+
+
+      await queryInterface.addColumn(
+        'needs',
+        'Name',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+
+      await queryInterface.addColumn(
+        'needs',
+        'Description',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+
+      await queryInterface.createTable(
+        'behaviors',
+        {
+          id: {
+            type: Sequelize.DataTypes.UUID,
+            defaultValue: Sequelize.DataTypes.UUIDV4,
+            primaryKey: true,
+          },
+          createdAt: { type: Sequelize.DataTypes.DATE },
+          updatedAt: { type: Sequelize.DataTypes.DATE },
+          deletedAt: { type: Sequelize.DataTypes.DATE },
+          importHash: {
+            type: Sequelize.DataTypes.STRING(255),
+            allowNull: true,
+            unique: true,
+          },
+        },
+        { transaction },
+      );  
+
+
+      await queryInterface.addColumn(
+        'behaviors',
+        'Name',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+
+      await queryInterface.addColumn(
+        'behaviors',
+        'Description',
+        {
+          type: Sequelize.DataTypes.TEXT,
+        },
+        { transaction },
+      );
+
 
       await queryInterface.addColumn(
         'users',

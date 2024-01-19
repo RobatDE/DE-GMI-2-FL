@@ -11,6 +11,7 @@ import companiesSlice from './companies/companiesSlice';
 import programsSlice from './programs/programsSlice';
 import campaignsSlice from './campaigns/campaignsSlice';
 import projectsSlice from './projects/projectsSlice';
+import personasSlice from './personas/personasSlice';
 import eventsSlice from './events/eventsSlice';
 import tasksSlice from './tasks/tasksSlice';
 import teamsSlice from './teams/teamsSlice';
@@ -33,6 +34,7 @@ export const store = configureStore({
     channels: channelsSlice,
     companies: companiesSlice,
     programs: programsSlice,
+    personas: personasSlice,
     campaigns: campaignsSlice,
     projects: projectsSlice,
     events: eventsSlice,

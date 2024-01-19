@@ -31,7 +31,7 @@ export default function Login() {
       dispatch(findMe());
     }
     if (currentUser?.id) {
-      router.push('/dashboard');
+      router.push('/personasdashboard');
     }
   }, [currentUser, token, dispatch, router]);
   useEffect(() => {

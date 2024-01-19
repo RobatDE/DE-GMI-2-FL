@@ -1,0 +1,174 @@
+{
+    "user": "Jane Doe",
+    "connections": [
+      {
+        "user": "John Smith",
+        "relationship": "Friend",
+        "friends": ["Sarah Thompson", "Mark Davis"],
+        "posts": [
+          {
+            "timestamp": "2023-01-15T12:30:00",
+            "content": "Having a great time at the park!",
+            "image": "park_image.jpg",
+            "comments": [
+              {
+                "user": "Sarah Thompson",
+                "timestamp": "2023-01-15T13:45:00",
+                "text": "Looks like fun! Let's plan a park day together.",
+                "rating": 5
+              },
+              {
+                "user": "Mark Davis",
+                "timestamp": "2023-01-16T09:20:00",
+                "text": "I'm in! Count me in for the next park adventure.",
+                "rating": 4
+              }
+            ]
+          },
+          {
+            "timestamp": "2023-02-02T18:45:00",
+            "content": "Just finished reading a fantastic book. Highly recommend!",
+            "image": "book_image.jpg",
+            "comments": [
+              {
+                "user": "Sarah Thompson",
+                "timestamp": "2023-02-03T10:05:00",
+                "text": "What book was it? I need a good recommendation!",
+                "rating": 5
+              }
+            ]
+          },
+          {
+            "timestamp": "2023-06-10T14:00:00",
+            "content": "Feeling frustrated with work deadlines. 😡",
+            "comments": [
+              {
+                "user": "Mark Davis",
+                "timestamp": "2023-06-10T15:30:00",
+                "text": "Hang in there! You'll get through it.",
+                "rating": 3
+              },
+              {
+                "user": "Sarah Thompson",
+                "timestamp": "2023-06-11T08:45:00",
+                "text": "Take a break if you need to. Self-care is important.",
+                "rating": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "user": "Mary Johnson",
+        "relationship": "Friend",
+        "friends": ["David Wilson", "Jessica Brown"],
+        "posts": [
+          {
+            "timestamp": "2023-03-10T08:15:00",
+            "content": "Enjoying my morning coffee ☕️",
+            "image": "coffee_image.jpg",
+            "comments": [
+              {
+                "user": "David Wilson",
+                "timestamp": "2023-03-10T09:30:00",
+                "text": "Coffee time is the best time! Cheers!",
+                "rating": 4
+              }
+            ]
+          },
+          {
+            "timestamp": "2023-07-02T21:12:00",
+            "content": "Dealing with a challenging project at work. 😟",
+            "comments": [
+              {
+                "user": "Jessica Brown",
+                "timestamp": "2023-07-02T22:30:00",
+                "text": "I know the feeling. Let's catch up and talk about it.",
+                "rating": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "user": "Emily Doe",
+        "relationship": "Sister",
+        "friends": ["Brian Miller", "Olivia White"],
+        "posts": [
+          {
+            "timestamp": "2023-04-05T15:20:00",
+            "content": "Celebrating Olivia's birthday today! 🎉",
+            "image": "birthday_image.jpg",
+            "comments": [
+              {
+                "user": "Brian Miller",
+                "timestamp": "2023-04-05T17:00:00",
+                "text": "Happy birthday, Olivia! 🥳",
+                "rating": 5
+              },
+              {
+                "user": "Olivia White",
+                "timestamp": "2023-04-06T08:45:00",
+                "text": "Thanks, everyone! Had an amazing day!",
+                "rating": 4
+              }
+            ]
+          },
+          {
+            "timestamp": "2023-08-15T11:45:00",
+            "content": "Feeling overwhelmed with responsibilities. 😓",
+            "image": "overwhelmed_image.jpg",
+            "comments": [
+              {
+                "user": "Brian Miller",
+                "timestamp": "2023-08-15T13:20:00",
+                "text": "Take one step at a time. You've got this!",
+                "rating": 4
+              },
+              {
+                "user": "Olivia White",
+                "timestamp": "2023-08-16T09:05:00",
+                "text": "Don't hesitate to ask for help if you need it.",
+                "rating": 5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "user": "Robert Doe",
+        "relationship": "Brother",
+        "friends": ["Rachel Taylor"],
+        "posts": [
+          {
+            "timestamp": "2023-05-20T22:05:00",
+            "content": "Just completed a challenging workout. Feeling motivated!",
+            "image": "workout_image.jpg",
+            "comments": [
+              {
+                "user": "Rachel Taylor",
+                "timestamp": "2023-05-21T09:10:00",
+                "text": "Keep it up! Your dedication is inspiring.",
+                "rating": 4
+              }
+            ]
+          },
+          {
+            "timestamp": "2023-09-05T17:30:00",
+            "content": "Struggling to stay positive today. 😞",
+            "image": "struggling_image.jpg",
+            "comments": [
+              {
+                "user": "Rachel Taylor",
+                "timestamp": "2023-09-06T08:15:00",
+                "text": "Remember, it's okay not to be okay. Reach out if you need support.",
+                "rating": 5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
+  

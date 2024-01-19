@@ -57,6 +57,9 @@ spec:
               hostPort: 8080
               protocol: TCP
           resources: {}
+      nodeSelector:
+          podtype: api
+
       imagePullSecrets: 
         - name: registry-credentials
       restartPolicy: Always

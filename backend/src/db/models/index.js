@@ -28,14 +28,18 @@ fs.readdirSync(__dirname)
     );
   })
   .forEach((file) => {
+    console.log('reading models.. '+file);
     const model = require(path.join(__dirname, file))(
       sequelize,
       Sequelize.DataTypes,
     );
+    console.log('----------------------------inside reading models.. '+model);
+
     db[model.name] = model;
   });
 
 Object.keys(db).forEach((modelName) => {
+  //console.log('----------------------------inside reading models.. '+modelName);
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }

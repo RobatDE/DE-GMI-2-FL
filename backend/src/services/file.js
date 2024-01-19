@@ -24,6 +24,8 @@ const uploadLocal = (
   },
 ) => {
   return (req, res) => {
+    console.log('------------- line 27 - files '+JSON.stringify(res.body));
+
     if (!req.currentUser) {
       res.sendStatus(403);
       return;

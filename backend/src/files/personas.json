@@ -1,0 +1,7 @@
+[
+    {   "Name": "John","AgeRange": "30-45", "Occupation": "Corporate Manager", "EducationLevel": "MBA",  "IncomeRange": "100k-150k","TravelPreference": "First Class, efficient service"  },
+    {   "Name": "Sarah","AgeRange": "22-35","Occupation": "Customer Service Agent","EducationLevel": "Bachelor's","IncomeRange": "30k-45k","WorkChallenge": "Managing diverse customer needs"},
+    {   "Name": "Rachel","AgeRange": "35-50","Occupation": "Operations Manager","EducationLevel": "Master's in Business Administration","IncomeRange": "70k-90k","Responsibility": "Overseeing day-to-day operations"},
+    {   "Name": "Alex","AgeRange": "18-24","Occupation": "College Student","EducationLevel": "In Progress","IncomeRange": "10k-20k","TravelStyle": "Economy, looking for deals"},
+    {   "Name": "Michael","AgeRange": "40-55","Occupation": "Flight Attendant","EducationLevel": "Associate Degree","IncomeRange": "50k-65k","Experience": "Expertise in customer service and safety procedures"}
+]

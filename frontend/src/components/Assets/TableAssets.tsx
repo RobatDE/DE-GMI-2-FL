@@ -99,7 +99,6 @@ const TableSampleAssets = ({ filterItems, setFilterItems, filters }) => {
   const handleDeleteAction = async () => {
     if (id) {
       await dispatch(deleteItem(id));
-      console.log('filterRequest', filterRequest);
       await loadData(0);
       setIsModalTrashActive(false);
     }
@@ -180,7 +179,6 @@ const TableSampleAssets = ({ filterItems, setFilterItems, filters }) => {
     'w-full py-2 px-2 my-2 border-gray-700 rounded dark:placeholder-gray-400 ' +
     'focus:ring focus:ring-blue-600 focus:border-blue-600 focus:outline-none bg-white ' +
     'dark:bg-slate-800 border';
-  console.log('assets: ', assets);
 
   return (
     <>

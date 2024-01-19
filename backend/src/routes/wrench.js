@@ -37,7 +37,7 @@ const { parse } = require('json2csv');
 
 /**
  *  @swagger
- *  /api/wrench
+ *  /api/wrench:
  *    post:
  *      security:
  *        - bearerAuth: []
@@ -185,7 +185,7 @@ router.delete(
 
 /**
  *  @swagger
- *  /api/wrench
+ *  /api/wrench:
  *    get:
  *      security:
  *        - bearerAuth: []

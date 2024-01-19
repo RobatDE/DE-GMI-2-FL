@@ -18,10 +18,39 @@ const menuAside: MenuAsideItem[] = [
     icon: mdiMonitor,
     label: 'Dashboard',
   },
-
+  {
+    href: '/personasdashboard',
+    icon: mdiMonitor,
+    label: 'PersonasDashboard',
+  },
+  {
+    href: '/personas/personas-list',
+    label: 'Personas',
+    icon: mdiTable,
+  },
   {
     href: '/users/users-list',
     label: 'Users',
+    icon: mdiTable,
+  },
+  {
+    href: '/admin/DesktopAdminAccount',
+    label: 'Account',
+    icon: mdiTable,
+  },
+  {
+    href: '/admin/DesktopAdminBilling',
+    label: 'Billing',
+    icon: mdiTable,
+  },
+  {
+    href: '/admin/DesktopAdminSecurity',
+    label: 'Security',
+    icon: mdiTable,
+  },
+  {
+    href: '/admin/DesktopAdminSingleSign',
+    label: 'Single Sign On',
     icon: mdiTable,
   },
   {
@@ -110,7 +139,7 @@ const menuAside: MenuAsideItem[] = [
     icon: mdiAccountCircle,
   },
   {
-    href: 'http://localhost:8080/api-docs',
+    href: 'http://${hostApi}:8080/api-docs',
     label: 'Swagger API',
     icon: mdiAccountCircle,
   },

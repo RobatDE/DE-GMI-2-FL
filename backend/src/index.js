@@ -20,6 +20,8 @@ const wrenchRoutes = require('./routes/wrench');
 
 const usersRoutes = require('./routes/users');
 
+const applicantsRoutes = require('./routes/applicants');
+
 const assetsRoutes = require('./routes/assets');
 
 const categoriesRoutes = require('./routes/categories');
@@ -33,6 +35,8 @@ const programsRoutes = require('./routes/programs');
 const campaignsRoutes = require('./routes/campaigns');
 
 const projectsRoutes = require('./routes/projects');
+
+const personasRoutes = require('./routes/personas');
 
 const eventsRoutes = require('./routes/events');
 
@@ -168,6 +172,11 @@ app.use(
   '/api/projects',
   passport.authenticate('jwt', { session: false }),
   projectsRoutes,
+);
+app.use(
+  '/api/personas',
+  passport.authenticate('jwt', { session: false }),
+  personasRoutes,
 );
 
 app.use(

@@ -1,0 +1,445 @@
+{
+    "people": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "title": "Software Engineer",
+        "industry": "Information Technology",
+        "company": "Tech Innovators Ltd.",
+        "employer": "Jane Smith",
+        "posts": [
+          {
+            "id": 101,
+            "content": "Excited to start a new project at Tech Innovators!",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 201,
+                "content": "That sounds awesome, John! Best of luck!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 202,
+                "content": "Looking forward to seeing your work!",
+                "sentiment": "neutral"
+              }
+            ]
+          },
+          {
+            "id": 102,
+            "content": "Feeling challenged but motivated. Any tips for staying focused?",
+            "sentiment": "mixed",
+            "comments": [
+              {
+                "id": 203,
+                "content": "Take short breaks and prioritize tasks. You got this!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 204,
+                "content": "It happens to the best of us. Keep pushing!",
+                "sentiment": "encouraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "title": "CEO",
+        "industry": "Technology",
+        "company": "Tech Innovators Ltd.",
+        "employer": null,
+        "posts": [
+          {
+            "id": 103,
+            "content": "Celebrating our team's success at Tech Innovators! 🎉",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 205,
+                "content": "Congratulations, Jane! The team is doing great!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 206,
+                "content": "Keep up the fantastic work!",
+                "sentiment": "encouraging"
+              }
+            ]
+          },
+          {
+            "id": 104,
+            "content": "Facing challenges but confident in our vision for the future.",
+            "sentiment": "mixed",
+            "comments": [
+              {
+                "id": 207,
+                "content": "Believe in your vision, Jane! Challenges make us stronger.",
+                "sentiment": "encouraging"
+              },
+              {
+                "id": 208,
+                "content": "Your leadership inspires us all!",
+                "sentiment": "positive"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Alice Johnson",
+        "title": "Marketing Specialist",
+        "industry": "Marketing",
+        "company": "Digital Marketing Solutions Inc.",
+        "employer": "Mark Thompson",
+        "posts": [
+          {
+            "id": 105,
+            "content": "Exciting new marketing campaign in the works!",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 209,
+                "content": "Can't wait to see the results, Alice! Great job!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 210,
+                "content": "Let me know if you need any help. Happy to contribute!",
+                "sentiment": "encouraging"
+              }
+            ]
+          },
+          {
+            "id": 106,
+            "content": "Feeling a bit overwhelmed with tasks today. Any advice?",
+            "sentiment": "mixed",
+            "comments": [
+              {
+                "id": 211,
+                "content": "Take a deep breath, Alice! You've got this.",
+                "sentiment": "encouraging"
+              },
+              {
+                "id": 212,
+                "content": "It's okay to ask for help. We're a team!",
+                "sentiment": "encouraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Michael Brown",
+        "title": "Financial Analyst",
+        "industry": "Finance",
+        "company": "Capital Investments Group",
+        "employer": "Emily White",
+        "posts": [
+          {
+            "id": 107,
+            "content": "Analyzing financial trends and making predictions.",
+            "sentiment": "neutral",
+            "comments": [
+              {
+                "id": 213,
+                "content": "Your insights are always valuable, Michael!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 214,
+                "content": "Looking forward to your financial report!",
+                "sentiment": "positive"
+              }
+            ]
+          },
+          {
+            "id": 108,
+            "content": "Feeling a bit stressed about the upcoming audit.",
+            "sentiment": "negative",
+            "comments": [
+              {
+                "id": 215,
+                "content": "Take it one step at a time, Michael. You've prepared well.",
+                "sentiment": "encouraging"
+              },
+              {
+                "id": 216,
+                "content": "We're here to support you during the audit!",
+                "sentiment": "encouraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Emily White",
+        "title": "HR Consultant",
+        "industry": "Human Resources",
+        "company": "Talent Solutions LLC",
+        "employer": null,
+        "posts": [
+          {
+            "id": 109,
+            "content": "Welcoming new talents to our team!",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 217,
+                "content": "Great job, Emily! Our team is growing stronger.",
+                "sentiment": "positive"
+              },
+              {
+                "id": 218,
+                "content": "Excited to meet the new hires!",
+                "sentiment": "positive"
+              }
+            ]
+          },
+          {
+            "id": 110,
+            "content": "Handling employee relations issues today. It's challenging but crucial.",
+            "sentiment": "mixed",
+            "comments": [
+              {
+                "id": 219,
+                "content": "Your expertise is invaluable, Emily. Keep it up!",
+                "sentiment": "encouraging"
+              },
+              {
+                "id": 220,
+                "content": "We appreciate your dedication to a positive workplace!",
+                "sentiment": "positive"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "David Miller",
+        "title": "Project Manager",
+        "industry": "Construction",
+        "company": "BuildIt Construction Services",
+        "employer": null,
+        "posts": [
+          {
+            "id": 111,
+            "content": "Exciting new construction project on the horizon!",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 221,
+                "content": "Can't wait to see the progress, David! Keep us updated.",
+                "sentiment": "positive"
+              },
+              {
+                "id": 222,
+                "content": "Your projects always exceed expectations!",
+                "sentiment": "positive"
+              }
+            ]
+          },
+          {
+            "id": 112,
+            "content": "Dealing with unexpected delays today. Challenges make us stronger!",
+            "sentiment": "encouraging",
+            "comments": [
+              {
+                "id": 223,
+                "content": "Your positive attitude is contagious, David!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 224,
+                "content": "We believe in your ability to overcome challenges!",
+                "sentiment": "encouraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Karen Lee",
+        "title": "Research Scientist",
+        "industry": "Biotechnology",
+        "company": "BioGen Innovations Inc.",
+        "employer": null,
+        "posts": [
+          {
+            "id": 113,
+            "content": "Discovering groundbreaking solutions in biotechnology!",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 225,
+                "content": "Your research is pushing the boundaries, Karen! Amazing!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 226,
+                "content": "Excited about the future of biotech with your contributions!",
+                "sentiment": "positive"
+              }
+            ]
+          },
+          {
+            "id": 114,
+            "content": "Facing challenges in the lab today. Science is an adventure!",
+            "sentiment": "encouraging",
+            "comments": [
+              {
+                "id": 227,
+                "content": "Your dedication to science is inspiring, Karen!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 228,
+                "content": "We believe in your ability to overcome challenges!",
+                "sentiment": "encouraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Mark Thompson",
+        "title": "Sales Representative",
+        "industry": "Retail",
+        "company": "Retail Dynamics Corporation",
+        "employer": null,
+        "posts": [
+          {
+            "id": 115,
+            "content": "Meeting sales targets and exceeding expectations!",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 229,
+                "content": "Your sales strategies are top-notch, Mark! Keep it up!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 230,
+                "content": "Excited to see the growth in sales!",
+                "sentiment": "positive"
+              }
+            ]
+          },
+          {
+            "id": 116,
+            "content": "Dealing with customer complaints today. Turning challenges into opportunities!",
+            "sentiment": "encouraging",
+            "comments": [
+              {
+                "id": 231,
+                "content": "Your positive approach to challenges is commendable, Mark!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 232,
+                "content": "We appreciate your commitment to customer satisfaction!",
+                "sentiment": "positive"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Jessica Davis",
+        "title": "Graphic Designer",
+        "industry": "Creative Arts",
+        "company": "Pixel Perfect Designs",
+        "employer": null,
+        "posts": [
+          {
+            "id": 117,
+            "content": "Creating visually stunning designs at Pixel Perfect!",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 233,
+                "content": "Your designs are always a work of art, Jessica! Stunning!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 234,
+                "content": "Looking forward to seeing your next masterpiece!",
+                "sentiment": "positive"
+              }
+            ]
+          },
+          {
+            "id": 118,
+            "content": "Feeling a bit creatively blocked today. Any suggestions?",
+            "sentiment": "mixed",
+            "comments": [
+              {
+                "id": 235,
+                "content": "Take a break and explore new sources of inspiration, Jessica!",
+                "sentiment": "encouraging"
+              },
+              {
+                "id": 236,
+                "content": "Your creativity is boundless. You'll overcome the block!",
+                "sentiment": "encouraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Alex Taylor",
+        "title": "Customer Support Specialist",
+        "industry": "Customer Service",
+        "company": "SupportHub Ltd.",
+        "employer": null,
+        "posts": [
+          {
+            "id": 119,
+            "content": "Providing top-notch support to our customers at SupportHub!",
+            "sentiment": "positive",
+            "comments": [
+              {
+                "id": 237,
+                "content": "Your dedication to customer satisfaction is commendable, Alex!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 238,
+                "content": "Customers appreciate your excellent service!",
+                "sentiment": "positive"
+              }
+            ]
+          },
+          {
+            "id": 120,
+            "content": "Handling challenging customer queries today. Customer satisfaction is our priority!",
+            "sentiment": "encouraging",
+            "comments": [
+              {
+                "id": 239,
+                "content": "Your patience and professionalism shine through, Alex!",
+                "sentiment": "positive"
+              },
+              {
+                "id": 240,
+                "content": "We're lucky to have you on the support team!",
+                "sentiment": "positive"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

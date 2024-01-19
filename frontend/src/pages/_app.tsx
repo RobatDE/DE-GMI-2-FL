@@ -34,13 +34,13 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     }
   }
 
-  const title = 'DE-GMI-2';
+  const title = 'Personas';
 
-  const description = 'Digital Exhaust Growth Platform';
+  const description = 'Expona Personas Platform';
 
-  const url = 'https://digitalexhaust.co/';
+  const url = 'https://expona.ai/';
 
-  const image = `https://digitalexhaust.co/logo.svg`;
+  const image = `https://expona.ai/logo.svg`;
 
   const imageWidth = '1920';
 
