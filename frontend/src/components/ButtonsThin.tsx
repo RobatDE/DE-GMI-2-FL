@@ -10,7 +10,7 @@ type Props = {
   className?: string;
 };
 
-const BaseButtons = ({
+const ButtonsThin = ({
   type = 'justify-start',
   mb = '-mb-3',
   classAddon = 'mr-3 last:mr-0 mb-3',
@@ -35,4 +35,4 @@ const BaseButtons = ({
   );
 };
 
-export default BaseButtons;
+export default ButtonsThin;

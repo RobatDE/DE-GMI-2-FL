@@ -20,7 +20,7 @@ import { getPageTitle } from '../../config';
 import { Field, Form, Formik } from 'formik';
 import FormField from '../../components/FormField';
 import BaseDivider from '../../components/BaseDivider';
-import BaseButtons from '../../components/BaseButtons';
+import ButtonsBase from '../../components/ButtonsBase';
 import BaseButton from '../../components/BaseButton';
 import FormCheckRadio from '../../components/FormCheckRadio';
 import FormCheckRadioGroup from '../../components/FormCheckRadioGroup';
@@ -123,7 +123,7 @@ const EditMarkets = () => {
               </FormField>
 
               <BaseDivider />
-              <BaseButtons>
+              <ButtonsBase>
                 <BaseButton type='submit' color='info' label='Submit' />
                 <BaseButton type='reset' color='info' outline label='Reset' />
                 <BaseButton
@@ -133,7 +133,7 @@ const EditMarkets = () => {
                   label='Cancel'
                   onClick={() => router.push('/markets/markets-list')}
                 />
-              </BaseButtons>
+              </ButtonsBase>
             </Form>
           </Formik>
         </CardBox>

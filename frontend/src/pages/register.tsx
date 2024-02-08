@@ -10,7 +10,7 @@ import LayoutGuest from '../layouts/Guest';
 import { Field, Form, Formik } from 'formik';
 import FormField from '../components/FormField';
 import BaseDivider from '../components/BaseDivider';
-import BaseButtons from '../components/BaseButtons';
+import ButtonsBase from '../components/ButtonsBase';
 import { useRouter } from 'next/router';
 import { getPageTitle } from '../config';
 import axios from 'axios';
@@ -66,14 +66,14 @@ export default function Register() {
 
               <BaseDivider />
 
-              <BaseButtons>
+              <ButtonsBase>
                 <BaseButton
                   type='submit'
                   label={loading ? 'Loading...' : 'Register'}
                   color='info'
                 />
                 <BaseButton href={'/login'} label={'Login'} color='info' />
-              </BaseButtons>
+              </ButtonsBase>
             </Form>
           </Formik>
         </CardBox>

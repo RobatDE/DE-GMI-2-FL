@@ -17,20 +17,23 @@ import SectionMain from '../../components/SectionMain';
 import CardBox from '../../components/CardBox';
 import BaseButton from '../../components/BaseButton';
 import BaseDivider from '../../components/BaseDivider';
-import { mdiChartTimelineVariant } from '@mdi/js';
+import { mdiChartTimelineVariant, mdiPerspectiveLess } from '@mdi/js';
 import { SwitchField } from '../../components/SwitchField';
 import FormField from '../../components/FormField';
 import PersonaAvatar from '../../components/PersonaAvatar';
+import { Slider } from "@material-tailwind/react";
 
 const PersonasView = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { personas } = useAppSelector((state) => state.personas);
+  console.log('personas(appsel):');
+  console.log(personas);
 
   const { id } = router.query;
-  console.log('personas avatar:');
-  console.dir(personas);
   const personaAvatar = PersonaAvatar({personaobj: personas, image: personas['avatar'], className: 'h-60 w-60  ' });
+  console.log('personas avatar:');
+  console.log(personaAvatar);
 
   useEffect(() => {
     dispatch(fetch({ id }));
@@ -43,138 +46,142 @@ const PersonasView = () => {
       </Head>
       <SectionMain>
         <SectionTitleLineWithButton
-          icon={mdiChartTimelineVariant}
+          icon={mdiPerspectiveLess}
           title={'View personas'}
           main
         >
-          Breadcrumbs
         </SectionTitleLineWithButton>
-        <CardBox>
-        <div className={'mb-4'}>
+        <CardBox >
+        <div className="flex flex-row space-x-1">
+        <div className={' mb-4'}>
         {personaAvatar}
         </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Name</p>
-            <p>{personas?.Name}</p>
+        <div className="flex flex-col content-start  space-x-1">
+          <div className="flex flex-row space-x-1">
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Name</p>
+              <p>{personas?.Name}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Description</p>
+              <p>{personas?.Description}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Gender</p>
+              <p>{personas?.Gender}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>GenderIdentity</p>
+              <p>{personas?.GenderIdentity}</p>
+            </div>
           </div>
+          <div className="flex flex-row space-x-1">
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Occupation</p>
+              <p>{personas?.Occupation}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>EducationLevel</p>
+              <p>{personas?.EducationLevel}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Incomerange</p>
+              <p>{personas?.IncomeRange}</p>
+            </div>
 
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Description</p>
-            <p>{personas?.Description}</p>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Age</p>
+              <p>{personas?.Age}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>MaritalStatus</p>
+              <p>{personas?.MaritalStatus}</p>
+            </div>
           </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Last Name</p>
-            <p>{personas?.Gender}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>GenderIdentity</p>
-            <p>{personas?.GenderIdentity}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Occupation</p>
-            <p>{personas?.Occupation}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>EducationLevel</p>
-            <p>{personas?.EducationLevel}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Incomerange</p>
-            <p>{personas?.IncomeRange}</p>
-          </div>
+          <div className="flex flex-row space-x-1">
 
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Age</p>
-            <p>{personas?.Age}</p>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>EmploymentType</p>
+              <p>{personas?.EmploymentType}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>HouseholdComposition</p>
+              <p>{personas?.HouseholdComposition}</p>
+            </div>     
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Religion</p>
+              <p>{personas?.Religion}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Income</p>
+              <p>{personas?.Income}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Nationality</p>
+              <p>{personas?.Nationality}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Geography</p>
+              <p>{personas?.Geography}</p>
+            </div>
           </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>MaritalStatus</p>
-            <p>{personas?.MaritalStatus}</p>
+          <div className="flex flex-row space-x-1">
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Ethnicity</p>
+              <p>{personas?.Ethnicity}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Race</p>
+              <p>{personas?.Race}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Language</p>
+              <p>{personas?.Language}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>PoliticalAffiliation</p>
+              <p>{personas?.PoliticalAffiliation}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>HomeOwnership</p>
+              <p>{personas?.HomeOwnership}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>PersonalityDetails</p>
+              <p>{personas?.PersonalityDetails}</p>
+            </div>
+            </div>
+          <div className="flex flex-row space-x-1">
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>PositionDetails</p>
+              <p>{personas?.PositionDetails}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Communications</p>
+              <p>{personas?.CommunicationsDetails}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Motives</p>
+              <p>{personas?.MotivationsDetails}</p>
+            </div>
+            <div className={'mb-4'}>
+              <p className={'block  mb-2'}>Role</p>
+              <p>{personas?.role ?? 'No data'}</p>
+            </div>
           </div>
-
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>EmploymentType</p>
-            <p>{personas?.EmploymentType}</p>
+            <SwitchField
+              field={{ name: 'disabled', value: personas?.disabled }}
+              form={{ setFieldValue: () => null }}
+              disabled
+            />
           </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>HouseholdComposition</p>
-            <p>{personas?.HouseholdComposition}</p>
-          </div>     
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Religion</p>
-            <p>{personas?.Religion}</p>
+          <div className="flex w-96 flex-col gap-8">
+            <Slider size="lg" defaultValue={50} className="text-[#2ec947]" placeholder=""/>
+            <Slider size="lg" defaultValue={40} className="text-[#2ec947]" placeholder=""/>
+            <Slider size="lg" defaultValue={60} className="text-[#2ec947]" placeholder=""/>
           </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Income</p>
-            <p>{personas?.Income}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Nationality</p>
-            <p>{personas?.Nationality}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Geography</p>
-            <p>{personas?.Geography}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Ethnicity</p>
-            <p>{personas?.Ethnicity}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Race</p>
-            <p>{personas?.Race}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Language</p>
-            <p>{personas?.Language}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>PoliticalAffiliation</p>
-            <p>{personas?.PoliticalAffiliation}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>HomeOwnership</p>
-            <p>{personas?.HomeOwnership}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>PersonalityDetails</p>
-            <p>{personas?.PersonalityDetails}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>PositionDetails</p>
-            <p>{personas?.PositionDetails}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Communications</p>
-            <p>{personas?.CommunicationsDetails}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Motives</p>
-            <p>{personas?.MotivationsDetails}</p>
-          </div>
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Role</p>
-            <p>{personas?.role ?? 'No data'}</p>
-          </div>
-
-          <SwitchField
-            field={{ name: 'disabled', value: personas?.disabled }}
-            form={{ setFieldValue: () => null }}
-            disabled
-          />
-
-          <div className={'mb-4'}>
-            <p className={'block font-bold mb-2'}>Avatar</p>
-            {personas?.avatar?.length ? (
-              <ImageField
-                name={'avatar'}
-                image={personas?.avatar}
-                className='w-20 h-20'
-              />
-            ) : (
-              <p>No Avatar</p>
-            )}
-          </div>
+ 
+        </div>        
 
           <>
           </>

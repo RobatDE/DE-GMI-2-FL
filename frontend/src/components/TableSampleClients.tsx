@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useSampleClients } from '../hooks/sampleData';
 import { Client } from '../interfaces';
 import BaseButton from './BaseButton';
-import BaseButtons from './BaseButtons';
+import ButtonsBase from './ButtonsBase';
 import CardBoxModal from './CardBoxModal';
 import UserAvatar from './UserAvatar';
 
@@ -104,7 +104,7 @@ const TableSampleClients = () => {
                 </small>
               </td>
               <td className='before:hidden lg:w-1 whitespace-nowrap'>
-                <BaseButtons type='justify-start lg:justify-end' noWrap>
+                <ButtonsBase type='justify-start lg:justify-end' noWrap>
                   <BaseButton
                     color='info'
                     icon={mdiEye}
@@ -117,7 +117,7 @@ const TableSampleClients = () => {
                     onClick={() => setIsModalTrashActive(true)}
                     small
                   />
-                </BaseButtons>
+                </ButtonsBase>
               </td>
             </tr>
           ))}
@@ -125,7 +125,7 @@ const TableSampleClients = () => {
       </table>
       <div className='p-3 lg:px-6 border-t border-gray-100 dark:border-slate-800'>
         <div className='flex flex-col md:flex-row items-center justify-between py-3 md:py-0'>
-          <BaseButtons>
+          <ButtonsBase>
             {pagesList.map((page) => (
               <BaseButton
                 key={page}
@@ -136,7 +136,7 @@ const TableSampleClients = () => {
                 onClick={() => setCurrentPage(page)}
               />
             ))}
-          </BaseButtons>
+          </ButtonsBase>
           <small className='mt-6 md:mt-0'>
             Page {currentPage + 1} of {numPages}
           </small>

@@ -56,6 +56,13 @@ const team_membersRoutes = require('./routes/team_members');
 
 const promptresponsesRoutes = require('./routes/promptresponses');
 
+// CORS middleware
+const allowCrossDomain = (req, res, next) => {
+  res.header(`Access-Control-Allow-Origin`, `example.com`);
+  res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
+  res.header(`Access-Control-Allow-Headers`, `Content-Type`);
+  next();
+};
 
 const options = {
   definition: {
@@ -95,6 +102,7 @@ const options = {
   apis: ['./src/routes/*.js'],
 };
 
+app.use(cors({ origin: true }));
 const specs = swaggerJsDoc(options);
 app.use(
   '/api-docs',
@@ -106,10 +114,11 @@ app.use(
   swaggerUI.setup(specs),
 );
 
-app.use(cors({ origin: true }));
 require('./auth/auth');
 
 app.use(bodyParser.json());
+  // CORS middleware
+app.use(allowCrossDomain);
 
 app.use('/api/auth', authRoutes);
 app.use('/api/file', fileRoutes);

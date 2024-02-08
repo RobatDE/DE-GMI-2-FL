@@ -10,7 +10,7 @@ metadata:
   name: backend
   namespace: gmi
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       io.kompose.service: backend
@@ -57,9 +57,6 @@ spec:
               hostPort: 8080
               protocol: TCP
           resources: {}
-      nodeSelector:
-          podtype: api
-
       imagePullSecrets: 
         - name: registry-credentials
       restartPolicy: Always

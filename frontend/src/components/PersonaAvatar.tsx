@@ -23,11 +23,11 @@ export default function PersonaAvatar({
 
 return (
     <div className={className}>
-      <img
+      {/* <img
         src={avatarImage}
         alt={personaobj['Description']}
         className='rounded-full z-[1] h-20 w-20 ml-8 mt-20 bg-gray-100 dark:bg-slate-800'
-      />
+      /> */}
       <img
         src={avatarImage}
         alt={personaobj['Name']}

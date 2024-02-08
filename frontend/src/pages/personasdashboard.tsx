@@ -34,7 +34,7 @@ const PersonasDashboard = () => {
       responsePersonas,
     ])
       .then((res) => res.map((el) => el.data))
-      .then((data) => {setPersonas(data[1].rows), console.dir(data[1].rows, console.dir(data))});
+      .then((data) => {setPersonas(data[1].rows), console.dir(data[1].rows)});
        console.log('end of loaddata:     '+personas);
       }
 /*         .then((data) => {data.forEach((el, i) => fns[i](el.count))
@@ -59,10 +59,9 @@ const PersonasDashboard = () => {
 
         <div className='grid grid-cols-4 gap-6 lg:grid-cols-3 mb-6'>
          <>{personas.length > 0 ? (personas.map( (_personas) => (
-        <PersonaCard  personaobj={_personas}  key={_personas.id}/> 
+          <PersonaCard  personaobj={_personas}  key={_personas.id}/> 
 
-         ))
-          ) : (<br/>)}</> 
+         )) ) : (<br/>)}</> 
         </div>
       </SectionMain>
     </>

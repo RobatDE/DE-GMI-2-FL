@@ -9,7 +9,7 @@ import { Field, Form, Formik } from 'formik';
 import FormField from '../components/FormField';
 import FormCheckRadio from '../components/FormCheckRadio';
 import BaseDivider from '../components/BaseDivider';
-import BaseButtons from '../components/BaseButtons';
+import ButtonsBase from '../components/ButtonsBase';
 import { getPageTitle } from '../config';
 import Link from 'next/link';
 import CardBoxComponentTitle from '../components/CardBoxComponentTitle';
@@ -53,14 +53,14 @@ export default function Starter() {
           <div className='space-y-3'>
           </div>
           <BaseDivider />
-          <BaseButtons>
+          <ButtonsBase>
             <BaseButton
               href='/login'
               label='Login'
               color='info'
               className='w-full'
             />
-          </BaseButtons>
+          </ButtonsBase>
           <div className='grid grid-cols-1 gap-2 lg:grid-cols-4 mt-2'>
           </div>
         </CardBox>

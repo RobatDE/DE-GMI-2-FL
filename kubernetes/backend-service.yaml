@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
+    service.beta.kubernetes.io/linode-loadbalancer-default-protocol: http
+    service.beta.kubernetes.io/linode-loadbalancer-port-443: '{ "tls-secret-name": "exponatls", "protocol": "https" }'
     kompose.cmd: kompose convert -f ../docker/docker-compose.yml
     kompose.version: 1.30.0 (9d8dcb518)
   creationTimestamp: null
@@ -10,11 +12,12 @@ metadata:
   name: backend
   namespace: gmi
 spec:
-  type: ClusterIP
   ports:
     - name: "8080"
       port: 8080
       targetPort: 8080
   selector:
     io.kompose.service: backend
-  externalName: api.digitalexhaust.ai
+status:
+  loadBalancer: {}
+

@@ -9,7 +9,7 @@ import { Field, Form, Formik } from 'formik';
 import Head from 'next/head';
 import { ReactElement } from 'react';
 import BaseButton from '../components/BaseButton';
-import BaseButtons from '../components/BaseButtons';
+import ButtonsBase from '../components/ButtonsBase';
 import BaseDivider from '../components/BaseDivider';
 import CardBox from '../components/CardBox';
 import FormCheckRadio from '../components/FormCheckRadio';
@@ -85,10 +85,10 @@ const FormsPage = () => {
 
               <BaseDivider />
 
-              <BaseButtons>
+              <ButtonsBase>
                 <BaseButton type='submit' color='info' label='Submit' />
                 <BaseButton type='reset' color='info' outline label='Reset' />
-              </BaseButtons>
+              </ButtonsBase>
             </Form>
           </Formik>
         </CardBox>

@@ -5,7 +5,6 @@ import CardBox from './CardBox';
 import FormCheckRadio from './FormCheckRadio';
 import PersonaAvatar from './PersonaAvatar';
 import React, { ReactNode } from 'react';
-import RCSlider from 'rc-slider';
 import { Slider } from "@material-tailwind/react";
 import 'rc-slider/assets/index.css';
 
@@ -41,13 +40,11 @@ console.dir('_personas:'+JSON.stringify(personaobj));
           Role: {personaobj['Occupation']}<br/>
           Age: {personaobj['Age']}<br/>
           Education: {personaobj['EducationLevel']}<br/>
-          {personaobj['Income']}<br/>
+          income: {personaobj['Income']}<br/>
           <br/>
           </div>
           <div className="flex w-96 flex-col gap-8">
-            <Slider size="lg" defaultValue={50} className="text-[#2ec947]" placeholder=""/>
-            <Slider size="lg" defaultValue={40} className="text-[#2ec947]" placeholder=""/>
-            <Slider size="lg" defaultValue={60} className="text-[#2ec947]" placeholder=""/>
+            
           </div>
         </div>
       </div>

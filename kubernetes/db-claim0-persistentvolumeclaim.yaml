@@ -11,5 +11,6 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 100Mi
+      storage: 20Gi
+  storageClassName: linode-block-storage-retain
 status: {}

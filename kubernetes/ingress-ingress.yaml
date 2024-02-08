@@ -3,27 +3,58 @@ kind: Ingress
 metadata:
   name: backend-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    service.beta.kubernetes.io/linode-loadbalancer-preserve: "true"
+    service.beta.kubernetes.io/linode-loadbalancer-default-protocol: http
+    service.beta.kubernetes.io/linode-loadbalancer-port-443: '{ "tls-secret-name": "exponatls", "protocol": "https" }'
 spec:
+  tls:
+    - hosts:
+      - app.expona.ai
+      - api.expona.ai
+      - rss.expona.ai
+      - chat.expona.ai
+      - expona.ai
+      secretName: exponatls
   ingressClassName: nginx
   rules:
-    - host: api.digitalexhaust.ai
+    - host: "api.expona.ai"
       http:
         paths:
-          - path: /(.*)
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: backend
                 port:
                   number: 8080
-            pathType: Prefix
-    - host: app.digitalexhaust.ai
+    - host: "app.expona.ai"
       http:
         paths:
-          - path: /(.*)
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: web
                 port:
-                  number: 3000                  
+                  number: 3000
+    # - host: "chat.expona.ai"
+    #   http:
+    #     paths:
+    #       - path: /
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: ollama-webui
+    #             port:
+    #               number: 8080
+    # - host: "rss.expona.ai"
+    #   http:
+    #     paths:
+    #       - path: /
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: rss
+    #             port:
+    #               number: 8080
+                                  

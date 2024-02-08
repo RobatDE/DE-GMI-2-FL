@@ -1,13 +1,13 @@
 
 export const hostApi =
-  process.env.NODE_ENV === 'development' ? 'http://localhost' : 'http://api.digitalexhaust.ai';
+  process.env.NODE_ENV === 'development' ? 'http://localhost' : 'https://api.expona.ai';
 export const portApi = 
-  process.env.NODE_ENV === 'development' ? 8080 : 80;
+  process.env.NODE_ENV === 'development' ? 8080 : 443;
 
 export const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}/api`;
 
 export const hostApp =
-  process.env.NODE_ENV === 'development' ? 'http://localhost' : 'http://app.digitalexhaust.ai';
+  process.env.NODE_ENV === 'development' ? 'http://localhost' : 'https://app.expona.ai';
 
 
 export const localStorageDarkModeKey = 'darkMode';

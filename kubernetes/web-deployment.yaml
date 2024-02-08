@@ -10,7 +10,7 @@ metadata:
   name: web
   namespace: gmi
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       io.kompose.service: web
@@ -31,7 +31,7 @@ spec:
           name: web
           env:
              - name: BACKEND_API_HOST
-               value: "http://api.digitalexhaust.net"
+               value: "http://api.expona.ai"
              - name: BACKEND_API_PORT
                value: "8080"
           ports:

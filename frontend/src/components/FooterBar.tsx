@@ -1,13 +1,10 @@
 import React, { ReactNode } from 'react';
-import { containerMaxW } from '../config';
+import { containerMaxW, hostApp } from '../config';
 import Logo from './Logo';
 
 type Props = {
   children: ReactNode;
 };
-
-const hostApp =
-  process.env.NODE_ENV === 'development' ? 'http://localhost' : 'http://app.digitalexhaust.ai';
 
 export default function FooterBar({ children }: Props) {
   const year = new Date().getFullYear();
@@ -28,12 +25,12 @@ export default function FooterBar({ children }: Props) {
         </div>
         <div className='sm:py-1'>
           <a href='https://www.enhancedai.com/' rel='noreferrer' target='_blank'>
-            <Logo className='w-auto h-4 md:h-4 mx-auto' logofilename='http://${hostApp}:3000/cpu-icon-wp.png'/>
+            <Logo className='w-auto h-4 md:h-4 mx-auto' logofilename={`${hostApp}:3000/cpu-icon-wp.png`}/>
           </a>
         </div>
         <div className='sm:py-1 md:text-right'>
           <a href='https://wrench.ai' rel='noreferrer' target='_blank'>
-            <Logo className='w-auto h-4 md:h-4 mx-auto' logofilename='http://${hostApp}:3000/wrench-wrench-svgrepo-com.svg' />
+            <Logo className='w-auto h-4 md:h-4 mx-auto' logofilename={`${hostApp}:3000/wrench-wrench-svgrepo-com.svg`} />
           </a>
         </div>
         <div className='md:py-2 md:text-right'>

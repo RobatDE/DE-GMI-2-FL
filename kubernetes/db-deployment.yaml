@@ -47,8 +47,6 @@ spec:
             - mountPath: /docker-entrypoint-initdb.d
               name: dedb-initdb
       restartPolicy: Always
-      nodeSelector:
-          podtype: api
       volumes:
         - name: db-claim0
           persistentVolumeClaim:

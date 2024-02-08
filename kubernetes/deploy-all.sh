@@ -5,21 +5,23 @@ export REGISTRY_EMAIL='rob@digitalexhaust.co'
 export BASE_64_BASIC_AUTH_CREDENTIALS_PSWD='echo -n "$REGISTRY_USERNAME:$REGISTRY_PASSWORD" | base64'
 export BASE_64_BASIC_AUTH_CREDENTIALS='echo -n "$REGISTRY_USERNAME:$REGISTRY_TOKEN" | base64'
 
-kubectl create secret docker-registry registry-credentials --docker-server=https://registry.gitlab.com --docker-username=REGISTRY_USERNAME --docker-password=REGISTRY_PASSWORD --docker-email=REGISTRY_EMAIL
-kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registry-credentials"}]}'
-kubectl apply -f registry-credentials.yaml
+# kubectl create secret docker-registry registry-credentials --docker-server=https://registry.gitlab.com --docker-username=REGISTRY_USERNAME --docker-password=REGISTRY_PASSWORD --docker-email=REGISTRY_EMAIL
+# kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registry-credentials"}]}'
+# kubectl apply -f registry-credentials.yaml
 kubectl config set-cluster expona
 kubectl create namespace gmi
 kubectl config set-context --current --namespace=gmi
-kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registry-credentials"}]}'
 
-kubectl apply -f default.service-account-linode.yaml 
-# kubectl apply -f linode-PVC-block-storage.yaml
+kubectl create secret tls exponatls --cert expona.ai.cer --key exponatls.key -n gmi
+kubectl create secret tls exponatls --cert expona.ai.cer --key exponatls.key -n default
 
+# define ingress controller
+kubectl apply -f ./ingress-ingress.yaml 
 
 kubectl apply -n gmi -f db-init-config-map.yaml
-kubectl apply -n gmi -f db-claim0-persistentvolumeclaim.yaml
-kubectl apply -n gmi -f backend-claim0-persistentvolumeclaim.yaml,backend-claim1-persistentvolumeclaim.yaml
+kubectl apply -n gmi -f db-deployment.yaml,db-service.yaml
+kubectl apply -n gmi -f web-deployment.yaml,web-service.yaml
+kubectl apply -n gmi -f backend-deployment.yaml,backend-service.yaml
 
 # aws iam create-role  --role-name AmazonEKS_EBS_CSI_Driver  --assume-role-policy-document file://"trust-policy.json"
 # aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy --role-name AmazonEKS_EBS_CSI_Driver
@@ -29,4 +31,4 @@ kubectl apply -n gmi -f backend-claim0-persistentvolumeclaim.yaml,backend-claim1
 
 kubectl get pods --all-namespaces
 kubectl get svc --all-namespaces
-kubectl get pvc --all-namespaces
+kubectl get service --all-namespaces ingress-nginx-controller --output wide --watch

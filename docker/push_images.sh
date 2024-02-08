@@ -2,6 +2,7 @@
 #aws ecr batch-delete-image --repository-name degmi --image-ids imageTag=039978326156.dkr.ecr.us-east-2.amazonaws.com/degmi:de-gmi-frontend
 
 #docker login -u robatde -p ${DOCKER_HUB_TOKEN}
+docker images --format="{{.Repository}} {{.ID}}" | grep "registry.gitlab" | cut -d' ' -f2 | xargs docker rmi --force
 docker login registry.gitlab.com -u rob6112628 -p Chui2023@@
 docker-compose build --no-cache
 

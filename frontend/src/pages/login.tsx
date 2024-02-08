@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { ReactElement } from 'react';
 import Head from 'next/head';
 import BaseButton from '../components/BaseButton';
@@ -9,7 +9,7 @@ import { Field, Form, Formik } from 'formik';
 import FormField from '../components/FormField';
 import FormCheckRadio from '../components/FormCheckRadio';
 import BaseDivider from '../components/BaseDivider';
-import BaseButtons from '../components/BaseButtons';
+import ButtonsBase from '../components/ButtonsBase';
 import { useRouter } from 'next/router';
 import { getPageTitle } from '../config';
 import { findMe, loginUser } from '../stores/authSlice';
@@ -20,6 +20,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Login() {
   const router = useRouter();
+  const [calledRouter, setusedRouter] = useState(0);
   const dispatch = useAppDispatch();
   const notify = (type, msg) => toast(msg, { type });
   const { currentUser, isFetching, errorMessage, token } = useAppSelector(
@@ -30,7 +31,8 @@ export default function Login() {
     if (token) {
       dispatch(findMe());
     }
-    if (currentUser?.id) {
+    if (currentUser?.id && calledRouter === 0) {
+      setusedRouter(1);
       router.push('/personasdashboard');
     }
   }, [currentUser, token, dispatch, router]);
@@ -84,7 +86,7 @@ export default function Login() {
 
               <BaseDivider />
 
-              <BaseButtons>
+              <ButtonsBase>
                 <BaseButton
                   className={'w-full'}
                   type='submit'
@@ -92,7 +94,7 @@ export default function Login() {
                   color='info'
                   disabled={isFetching}
                 />
-              </BaseButtons>
+              </ButtonsBase>
               <br />
               <p className={'text-center text-gray-600'}>
                 Don’t have account yet?{' '}

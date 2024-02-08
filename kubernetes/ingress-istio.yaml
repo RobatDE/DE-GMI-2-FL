@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: istio
   rules:
-  - host: api.digitalexhaust.ai
+  - host: api.expona.ai
     http:
       paths:
       - path: /api

@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: LoadBalancer
+metadata:
+  annotations:
+    service.beta.kubernetes.io/linode-loadbalancer-default-protocol: http
+    service.beta.kubernetes.io/linode-loadbalancer-port-443: '{ "tls-secret-name": "exponatls", "protocol": "https" }'
+  name: backend-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: api.expona.ai
+      http:
+        paths:
+          - path: /(.*)
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 8080
+            pathType: Prefix
+    - host: app.expona.ai
+      http:
+        paths:
+          - path: /(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: web
+                port:
+                  number: 3000                  

@@ -82,28 +82,28 @@ const PersonasTablesPage = () => {
           title='Personas'
           main
         >
-          Breadcrumbs
         </SectionTitleLineWithButton>
         <CardBox className='mb-6'>
           <BaseButton
-            className={'mr-3'}
+            className={'mr-3 btn-xs btn-rounded'}
             href={'/personas/personas-new'}
             color='info'
             label='New Item'
           />
           <BaseButton
-            className={'mr-3'}
+            className={'mr-3 btn-xs'}
+            href={'/personas/personas-new'}
             color='info'
             label='Add Filter'
             onClick={addFilter}
           />
           <BaseButton
-            className={'mr-3'}
+            className={'mr-3 btn-xs'}
             color='info'
             label='Download CSV'
             onClick={getPersonasCSV}
           />
-          <BaseButton
+          <BaseButton className='btn-xs'
             color='info'
             label='Upload CSV'
             onClick={() => setIsModalActive(true)}

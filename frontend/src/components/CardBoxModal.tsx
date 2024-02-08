@@ -2,7 +2,7 @@ import { mdiClose } from '@mdi/js';
 import { ReactNode } from 'react';
 import type { ColorButtonKey } from '../interfaces';
 import BaseButton from './BaseButton';
-import BaseButtons from './BaseButtons';
+import ButtonsBase from './ButtonsBase';
 import CardBox from './CardBox';
 import CardBoxComponentTitle from './CardBoxComponentTitle';
 import OverlayLayer from './OverlayLayer';
@@ -31,7 +31,7 @@ const CardBoxModal = ({
   }
 
   const footer = (
-    <BaseButtons>
+    <ButtonsBase>
       <BaseButton label={buttonLabel} color={buttonColor} onClick={onConfirm} />
       {!!onCancel && (
         <BaseButton
@@ -41,7 +41,7 @@ const CardBoxModal = ({
           onClick={onCancel}
         />
       )}
-    </BaseButtons>
+    </ButtonsBase>
   );
 
   return (
