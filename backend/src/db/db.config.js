@@ -10,9 +10,9 @@ module.exports = {
     seederStorage: 'sequelize',
   },
   development: {
-    username: 'postgres',
+    username: 'postgresexpona',
     dialect: 'postgres',
-    password: 'postgres',
+    password: 'ExponaPassword1234',
     database: 'dedb',
     host: 'db' || 'localhost',
     logging: console.log,

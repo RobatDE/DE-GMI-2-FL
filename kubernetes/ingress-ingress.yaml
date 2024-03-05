@@ -11,8 +11,6 @@ spec:
     - hosts:
       - app.expona.ai
       - api.expona.ai
-      - rss.expona.ai
-      - chat.expona.ai
       - expona.ai
       secretName: exponatls
   ingressClassName: nginx
@@ -56,5 +54,5 @@ spec:
     #           service:
     #             name: rss
     #             port:
-    #               number: 8080
+    #               number: 80
                                   

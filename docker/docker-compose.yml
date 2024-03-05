@@ -17,7 +17,10 @@ services:
       - NODE_ENV=development
 
   db:
-    image: postgres
+    image: registry.gitlab.com/de4512928/saas/expona-postgresql:latest
+    build: ../db
+    pull_policy: always
+    container_name: db
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
@@ -26,9 +29,9 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=dedb
-      - APP_DB_NAME=degmi
-      - APP_DB_USER=degmi 
-      - APP_DB_PASS=degmi
+      - APP_DB_NAME=dedb
+      - APP_DB_USER=expona 
+      - APP_DB_PASS=expona
     ports:
       - "5432:5432"
 

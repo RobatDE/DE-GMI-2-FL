@@ -6,16 +6,16 @@ const csv = require('csv-parser');
 const stream = require('stream');
 
 const ids = [
-  '05283bb3-3bda-454e-b8c3-a876ad727722',
-  '576d7944-5c91-4853-8912-6934d0787a73',
-  '3b1cbac8-7afe-4103-8a31-4c0eabdaad9f',
-  'eecf417c-7da1-416f-9354-0bbc7960382f',
-  'f50f979a-b471-4f43-ad76-920e4f9dc2ec',
-  '64207fd8-93ab-44d0-abd9-91b5840f43d1',
-  '625ebb3a-0872-4291-92c4-a0ca416e37d1',
-  '7720c7a2-b3d3-4ebc-a3cd-848fd3d7f1fd',
-  '354c018c-228d-4783-8a59-cff659708d58',
-  'f42f14f4-465e-45ca-82b4-65bedd549af5'
+  '05283bb3-3bda-454e-b8c3-a876ad727723',
+  '576d7944-5c91-4853-8912-6934d0787a74',
+  '3b1cbac8-7afe-4103-8a31-4c0eabdaad9a',
+  'eecf417c-7da1-416f-9354-0bbc7960382a',
+  'f50f979a-b471-4f43-ad76-920e4f9dc2ed',
+  '64207fd8-93ab-44d0-abd9-91b5840f43d2',
+  '625ebb3a-0872-4291-92c4-a0ca416e37d2',
+  '7720c7a2-b3d3-4ebc-a3cd-848fd3d7f1fe',
+  '354c018c-228d-4783-8a59-cff659708d59',
+  'f42f14f4-465e-45ca-82b4-65bedd549af6'
 ];
 
 /** @type {import('sequelize-cli').Migration} */

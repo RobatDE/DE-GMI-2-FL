@@ -38,6 +38,8 @@ const projectsRoutes = require('./routes/projects');
 
 const personasRoutes = require('./routes/personas');
 
+const positionsRoutes = require('./routes/positions');
+
 const eventsRoutes = require('./routes/events');
 
 const tasksRoutes = require('./routes/tasks');
@@ -58,7 +60,7 @@ const promptresponsesRoutes = require('./routes/promptresponses');
 
 // CORS middleware
 const allowCrossDomain = (req, res, next) => {
-  res.header(`Access-Control-Allow-Origin`, `example.com`);
+  res.header(`Access-Control-Allow-Origin`, `*`);
   res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
   res.header(`Access-Control-Allow-Headers`, `Content-Type`);
   next();
@@ -186,6 +188,11 @@ app.use(
   '/api/personas',
   passport.authenticate('jwt', { session: false }),
   personasRoutes,
+);
+app.use(
+  '/api/positions',
+  passport.authenticate('jwt', { session: false }),
+  positionsRoutes,
 );
 
 app.use(

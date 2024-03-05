@@ -245,9 +245,11 @@ router.delete(
 router.get(
   '/',
   wrapAsync(async (req, res) => {
-    console.log('------------get-findall-'+JSON.stringify(req.query));
+    console.log('------------get-findall-personas-query:'+JSON.stringify(req.query));
     const filetype = req.query.filetype;
     const payload = await PersonasDBApi.findAll(req.query);
+    console.log('------------get-findall-personas-response:'+JSON.stringify(payload));
+    
     if (filetype && filetype === 'csv') {
       const fields = ['id', 'name', 'segment'];
       const opts = { fields };

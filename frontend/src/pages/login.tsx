@@ -59,7 +59,7 @@ export default function Login() {
         <CardBox className='w-11/12 md:w-7/12 lg:w-6/12 xl:w-4/12'>
           <Formik
             initialValues={{
-              email: 'admin@flatlogic.com',
+              email: 'admin@expona.ai',
               password: 'password',
               remember: true,
             }}

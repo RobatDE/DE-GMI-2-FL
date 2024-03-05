@@ -16,7 +16,7 @@ const menuAside: MenuAsideItem[] = [
   {
     href: '/personasdashboard',
     icon: mdiMonitor,
-    label: 'PersonasDashboard',
+    label: 'Personas Dashboard',
   },
   {
     href: '/personas/personas-list',
@@ -24,18 +24,18 @@ const menuAside: MenuAsideItem[] = [
     icon: mdiTable,
   },
   {
+    href: '/positionsdashboard',
+    icon: mdiMonitor,
+    label: 'Position Dashboard',
+  },
+  {
+    href: '/positions/positions-list',
+    label: 'Positions',
+    icon: mdiTable,
+  },
+  {
     href: '/users/users-list',
     label: 'Users',
-    icon: mdiTable,
-  },
-  {
-    href: '/prompts/prompts-list',
-    label: 'Prompts',
-    icon: mdiTable,
-  },
-  {
-    href: '/promptresponses/promptresponses-list',
-    label: 'Promptresponses',
     icon: mdiTable,
   },
   {

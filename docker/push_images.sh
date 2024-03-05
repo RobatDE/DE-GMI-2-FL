@@ -19,5 +19,5 @@ docker-compose build --no-cache
 #docker tag robatde/de-gmi-images:backend robatde/de-gmi-images:latest
 docker push registry.gitlab.com/de4512928/saas/backend:latest
 docker push registry.gitlab.com/de4512928/saas/frontend:latest
-
+docker push registry.gitlab.com/de4512928/saas/expona-postgresql:latest
 # 039978326156.dkr.ecr.us-east-2.amazonaws.com/degmi

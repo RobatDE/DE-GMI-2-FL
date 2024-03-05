@@ -5,15 +5,13 @@ import {
   mdiUpload,
 } from '@mdi/js';
 import Head from 'next/head';
-import { uniqueId } from 'lodash';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import 'react-toastify/dist/ReactToastify.min.css';
 import CardBox from '../../components/CardBox';
 import LayoutAuthenticated from '../../layouts/Authenticated';
 import SectionMain from '../../components/SectionMain';
 import SectionTitleLineWithButton from '../../components/SectionTitleLineWithButton';
 import { getPageTitle } from '../../config';
-import TablePositions from '../../components/Positions/TablePositions';
 
 import { Field, Form, Formik } from 'formik';
 import FormField from '../../components/FormField';
@@ -33,38 +31,15 @@ import { RichTextField } from '../../components/RichTextField';
 import { create } from '../../stores/users/usersSlice';
 import { useAppDispatch } from '../../stores/hooks';
 import { useRouter } from 'next/router';
-import { colors } from '@mui/material';
-import { Textarea } from '@material-tailwind/react';
 
 const TablesPage = () => {
-
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const [filterItems, setFilterItems] = useState([]);
-  const [showTable, setShowTable] = useState(true);
 
   const handleSubmit = async (data) => {
     await dispatch(create(data));
     await router.push('/users/users-list');
   };
-  const [filters] = useState([
-    { label: 'Title', title: 'title' },
-    { label: 'Code', title: 'code' },
-  ]);
-  const addFilter = () => {
-    const newItem = {
-      id: uniqueId(),
-      fields: {
-        filterValue: '',
-        filterValueFrom: '',
-        filterValueTo: '',
-        selectedField: '',
-      },
-    };
-    newItem.fields.selectedField = filters[0].title;
-    setFilterItems([...filterItems, newItem]);
-  };
-
   return (
     <>
       <Head>
@@ -73,33 +48,11 @@ const TablesPage = () => {
       <SectionMain>
         <SectionTitleLineWithButton
           icon={mdiChartTimelineVariant}
-          title='New Persona'
+          title='New Item'
           main
         >
           Breadcrumbs
         </SectionTitleLineWithButton>
-        <CardBox className='mb-6'>
-          <BaseButton
-            className={'mr-3 btn-xs'}
-            variant='contained'
-            label='Select Occupation'
-            color='info'
-            onClick={() => setShowTable(!showTable)}
-          >           
-          </BaseButton>
-          <div >
-          Occupation: Nurse Code: fdssdf
-          </div>
-        </CardBox>
-        {showTable && (
-        <CardBox className='mb-6' hasTable>
-          <TablePositions
-            filterItems={filterItems}
-            setFilterItems={setFilterItems}
-            filters={filters}
-          />
-          </CardBox>  
-        )}
         <CardBox>
           <Formik
             initialValues={{
@@ -120,12 +73,12 @@ const TablesPage = () => {
             onSubmit={(values) => handleSubmit(values)}
           >
             <Form>
-              <FormField label='Title'>
-                <Field name='title' placeholder='Persona Title' />
+              <FormField label='First Name'>
+                <Field name='firstName' placeholder='Your First Name' />
               </FormField>
 
-              <FormField label='Description'>
-                <Field name='Description' placeholder='Description' />
+              <FormField label='Last Name'>
+                <Field name='lastName' placeholder='Your Last Name' />
               </FormField>
 
               <FormField label='Phone Number'>

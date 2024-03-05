@@ -30,11 +30,20 @@ spec:
         - env:
             - name: POSTGRES_DB
               value: dedb
-            - name: POSTGRES_HOST_AUTH_METHOD
-              value: trust
             - name: PGDATA
               value: /var/lib/postgresql/data/pgdata/
-          image: postgres
+            - name: POSTGRES_USER
+              value: postgresExpona
+            - name: POSTGRES_PASSWORD
+              value: ExponaPassword1234
+            - name: APP_DB_NAME
+              value: dedb
+            - name: APP_DB_USER
+              value: expona 
+            - name: APP_DB_PASS
+              value: ExponaPassword1234              
+          image: postgres:16.2
+          imagePullPolicy: Always
           name: db
           ports:
             - containerPort: 5432

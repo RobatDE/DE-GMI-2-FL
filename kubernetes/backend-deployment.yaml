@@ -29,10 +29,16 @@ spec:
       containers:
         - command: ["bash", "./wait-for-it.sh", "db:5432", "--timeout=0", "--strict", "--", "bash", "./start-backend.sh"]
           env:
+             - name: NODE_ENV
+               value: "production"
+             - name: ONET_NAME
+               value: "expona"
+             - name: ONET_PSWD
+               value: "4696tug"
              - name: DB_USER
-               value: "admin"
+               value: "postgresExpona"
              - name: DB_PASS
-               value: "admin"
+               value: "ExponaPassword1234"
              - name: DB_NAME
                value: "dedb"
              - name: DB_HOST
@@ -42,13 +48,15 @@ spec:
              - name: DEV_DB_HOST
                value: "db"
              - name: POSTGRES_USER
-               value: "postgres"
+               value: "postgresExpona"
              - name: POSTGRES_DB
-               value: "postgres"
+               value: "ExponaPassword1234"
              - name: APP_DB_NAME
                value: "dedb"
              - name: APP_DB_USER
-               value: "admin"
+               value: "expona"
+             - name: APP_DB_PASS
+               value: "ExponaPassword1234"
           image: registry.gitlab.com/de4512928/saas/backend:latest
           imagePullPolicy: Always
           name: backend

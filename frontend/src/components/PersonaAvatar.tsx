@@ -31,7 +31,7 @@ return (
       <img
         src={avatarImage}
         alt={personaobj['Name']}
-        className='z-10 block h-auto w-full max-w-full bg-gray-100 dark:bg-slate-800'
+        className='rounded-full z-[1] h-20 w-20 ml-8 mt-20 bg-gray-100 dark:bg-slate-800'
       />
 
       {children}

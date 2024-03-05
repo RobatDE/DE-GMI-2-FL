@@ -9,7 +9,7 @@ const config = {
     saltRounds: 12,
   },
   admin_pass: 'password',
-  admin_email: 'admin@flatlogic.com',
+  admin_email: 'admin@expona.ai',
   providers: {
     LOCAL: 'local',
     GOOGLE: 'google',
@@ -36,7 +36,7 @@ const config = {
   },
   uploadDir: os.tmpdir(),
   email: {
-    from: 'app@flatlogic.app',
+    from: 'app@expona.ai',
     host: 'smtp.sendgrid.net',
     port: 587,
     auth: {
