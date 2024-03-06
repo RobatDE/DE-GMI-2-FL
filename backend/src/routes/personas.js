@@ -2,6 +2,7 @@ const express = require('express');
 
 const PersonasService = require('../services/personas');
 const PersonasDBApi = require('../db/api/personas');
+const PersonasModel = require('../db/models/personas');
 const wrapAsync = require('../helpers').wrapAsync;
 
 const router = express.Router();
@@ -371,6 +372,48 @@ router.get(
   '/:id',
   wrapAsync(async (req, res) => {
     const payload = await PersonasDBApi.findBy({ id: req.params.id });
+
+    res.status(200).send(payload);
+  }),
+);
+
+/**
+ * @swagger
+ *  /api/personas/{id}:
+ *    get:
+ *      security:
+ *        - bearerAuth: []
+ *      tags: [Personas]
+ *      summary: Get selected item
+ *      description: Get selected item
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          description: ID of item to get
+ *          required: true
+ *          schema:
+ *            type: string
+ *      responses:
+ *        200:
+ *          description: Selected item successfully received
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: "#/components/schemas/Personas"
+ *        400:
+ *          description: Invalid ID supplied
+ *        401:
+ *          $ref: "#/components/responses/UnauthorizedError"
+ *        404:
+ *          description: Item not found
+ *        500:
+ *          description: Some server error
+ */
+
+router.getFromPosition(
+  '/:code',
+  wrapAsync(async (req, res) => {
+    const payload = PersonasService.fromPosition(req.params.code);    
 
     res.status(200).send(payload);
   }),

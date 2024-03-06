@@ -15,7 +15,7 @@ import dataFormatter from '../../helpers/dataFormatter';
 
 const perPage = 5;
 
-const TablePositions = ({ filterItems, setFilterItems, filters }) => {
+const TablePositions = ({ filterItems, setFilterItems, filters, setSelectedPosition, closeTable }) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const notify = (type, msg) => toast(msg, { type, position: 'bottom-center' });
@@ -49,6 +49,7 @@ const TablePositions = ({ filterItems, setFilterItems, filters }) => {
   const loadData = async (page = currentPage, request = filterRequest) => {
     if (page !== currentPage) setCurrentPage(page);
     if (request !== filterRequest) setFilterRequest(request);
+    
     const { sort, field } = sortModel[0];
 
 //    const query = `?page=${page}&limit=${perPage}${request}&sort=${sort}&field=${field}`;
@@ -84,6 +85,12 @@ const TablePositions = ({ filterItems, setFilterItems, filters }) => {
 
   const handleEditAction = (id: string) => {
     router.push(`/positions/${id}`);
+  };
+
+  const handlePromoteAction = (id: string) => {
+    console.log('Inside the promote action.....'+id)
+    setSelectedPosition(id);
+    closeTable();
   };
 
   const handleViewAction = (id: string) => {
@@ -160,6 +167,7 @@ const TablePositions = ({ filterItems, setFilterItems, filters }) => {
       handleDeleteModalAction,
       handleViewAction,
       handleEditAction,
+      handlePromoteAction,
     ).then((newCols) => {
       setColumns(newCols); 
       console.log('positions loadcolumns  data: ', newCols)

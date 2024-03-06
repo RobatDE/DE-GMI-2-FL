@@ -105,7 +105,7 @@ const PersonasView = () => {
               <p>{personas?.EmploymentType}</p>
             </div>
             <div className={'mb-4'}>
-              <p className={'block  mb-2'}>HouseholdComposition</p>
+              <p className={'block  mb-2'}>EmploymentType</p>
               <p>{personas?.HouseholdComposition}</p>
             </div>     
             <div className={'mb-4'}>

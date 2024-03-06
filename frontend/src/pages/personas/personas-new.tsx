@@ -42,6 +42,7 @@ const TablesPage = () => {
   const dispatch = useAppDispatch();
   const [filterItems, setFilterItems] = useState([]);
   const [showTable, setShowTable] = useState(true);
+  const [selectedposition, setSelectedPosition] = useState();
 
   const handleSubmit = async (data) => {
     await dispatch(create(data));
@@ -76,7 +77,7 @@ const TablesPage = () => {
           title='New Persona'
           main
         >
-          Breadcrumbs
+          {selectedposition}
         </SectionTitleLineWithButton>
         <CardBox className='mb-6'>
           <BaseButton
@@ -87,9 +88,6 @@ const TablesPage = () => {
             onClick={() => setShowTable(!showTable)}
           >           
           </BaseButton>
-          <div >
-          Occupation: Nurse Code: fdssdf
-          </div>
         </CardBox>
         {showTable && (
         <CardBox className='mb-6' hasTable>
@@ -97,45 +95,108 @@ const TablesPage = () => {
             filterItems={filterItems}
             setFilterItems={setFilterItems}
             filters={filters}
+            setSelectedPosition={setSelectedPosition}
+            closeTable={() => setShowTable(!showTable)}
           />
           </CardBox>  
         )}
         <CardBox>
           <Formik
             initialValues={{
-              firstName: '',
-
-              lastName: '',
-
-              phoneNumber: '',
-
-              email: '',
-
-              role: '',
-
+              title: '',
+              description: '',
+              occupation: '',
+              educationlevel: '',
+              incomerange: '',
+              religion: '',
+              income: '',
               disabled: false,
-
               avatar: [],
             }}
             onSubmit={(values) => handleSubmit(values)}
           >
+            
             <Form>
+            <div>
+            <FormField label='Position'>
+                <Field name='position' placeholder='Position' value={selectedposition} />
+            </FormField>
               <FormField label='Title'>
                 <Field name='title' placeholder='Persona Title' />
               </FormField>
-
               <FormField label='Description'>
                 <Field name='Description' placeholder='Description' />
               </FormField>
-
-              <FormField label='Phone Number'>
-                <Field name='phoneNumber' placeholder='Your Phone Number' />
+              <FormField label='Gender'>
+                <Field name='Gender' placeholder='Gender' />
               </FormField>
-
-              <FormField label='E-Mail'>
-                <Field name='email' placeholder='Your E-Mail' />
+              <FormField label='GenderIdentity'>
+                <Field name='GenderIdentity' placeholder='GenderIdentity' />
               </FormField>
-
+              <FormField label='Occupation'>
+                <Field name='Occupation' placeholder='Occupation' />
+              </FormField>
+              <FormField label='EducationLevel'>
+                <Field name='EducationLevel' placeholder='EducationLevel' />
+              </FormField>
+              <FormField label='IncomeRange'>
+                <Field name='IncomeRange' placeholder='IncomeRange' />
+              </FormField>
+              <FormField label='Age'>
+                <Field name='age' placeholder='Age' />
+              </FormField>
+              <FormField label='MaritalStatus'>
+                <Field name='MaritalStatus' placeholder='MaritalStatus' />
+              </FormField>
+              <FormField label='EmploymentType'>
+                <Field name='EmploymentType' placeholder='EmploymentType' />
+              </FormField>
+              <FormField label='Household Composition'>
+                <Field name='HouseholdComposition' placeholder='HouseholdComposition' />
+              </FormField>
+              <FormField label='Religion'>
+                <Field name='Religion' placeholder='Religion' />
+              </FormField>
+              </div>
+              <div>
+              <FormField label='Income'>
+                <Field name='Income' placeholder='Income' />
+              </FormField>
+              <FormField label='Nationality'>
+                <Field name='Nationality' placeholder='Nationality' />
+              </FormField>
+              <FormField label='Geography'>
+                <Field name='Geography' placeholder='Geography' />
+              </FormField>
+              <FormField label='Ethnicity'>
+                <Field name='Ethnicity' placeholder='Ethnicity' />
+              </FormField>
+              <FormField label='Race'>
+                <Field name='Race' placeholder='Race' />
+              </FormField>
+              <FormField label='Language'>
+                <Field name='Language' placeholder='Language' />
+              </FormField>
+              <FormField label='PoliticalAffiliation'>
+                <Field name='PoliticalAffiliation' placeholder='PoliticalAffiliation' />
+              </FormField>
+              <FormField label='HomeOwnership'>
+                <Field name='HomeOwnership' placeholder='HomeOwnership' />
+              </FormField>
+              <FormField label='PersonalityDetails'>
+                <Field name='PersonalityDetails' placeholder='PersonalityDetails' />
+              </FormField>
+              <FormField label='PositionDetails'>
+                <Field name='PositionDetails' placeholder='PositionDetails' />
+              </FormField>
+              <FormField label='Communications'>
+                <Field name='Communications' placeholder='Communications' />
+              </FormField>
+              <FormField label='Motives'>
+                <Field name='Motives' placeholder='Motives' />
+              </FormField>
+              </div>
+              <div>
               <FormField label='Role'>
                 <FormCheckRadioGroup>
                   <FormCheckRadio type='radio' label='admin'>
@@ -184,6 +245,7 @@ const TablesPage = () => {
                   onClick={() => router.push('/users/users-list')}
                 />
               </ButtonsBase>
+              </div>
             </Form>
           </Formik>
         </CardBox>

@@ -18,6 +18,7 @@ export const loadColumns = async (
   onDelete: Params,
   onView: Params,
   onEdit: Params,
+  onPromote: Params,
 ) => {
   async function callOptionsApi(entityName: string) {
     const data = await axios(`/${entityName}/autocomplete?limit=100`);
@@ -77,7 +78,7 @@ export const loadColumns = async (
         <GridActionsCellItem
           key={1}
           icon={<BaseIcon path={mdiArrowUpBold} size={24} />}
-           //() => onEdit(params?.row?.id)}
+          onClick={() => onPromote(params?.row?.id)}
           label='Edit'
         />,
         <GridActionsCellItem

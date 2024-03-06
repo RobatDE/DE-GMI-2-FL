@@ -3,6 +3,7 @@ const PersonasDBApi = require('../db/api/personas');
 const processFile = require('../middlewares/upload');
 const csv = require('csv-parser');
 const stream = require('stream');
+const positionsSrvc = require('./positions');
 
 module.exports = class PersonasService {
   static async create(data, currentUser) {
@@ -86,6 +87,23 @@ module.exports = class PersonasService {
       }
 
       await PersonasDBApi.remove(id, {
+        currentUser,
+        transaction,
+      });
+
+      await transaction.commit();
+    } catch (error) {
+      await transaction.rollback();
+      throw error;
+    }
+  }
+
+  static async fromPosition(data, code, currentUser) {
+    const positionsSrvc.
+
+    const transaction = await db.sequelize.transaction();
+    try {
+      await PersonasDBApi.create(data, {
         currentUser,
         transaction,
       });
